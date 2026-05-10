@@ -20,7 +20,7 @@ export interface Recommendation {
   savingsMonthly: number;
   savingsAnnual: number;
   reason: string;
-  type: 'seat_optimization' | 'tier_downgrade' | 'duplicate_tool';
+  type: 'seat_optimization' | 'tier_downgrade' | 'duplicate_tool' | 'cross_vendor';
 }
 
 export interface GlobalInsight {
@@ -43,14 +43,14 @@ export function runAudit(input: AuditInput): Omit<AuditResult, 'aiSummary'> {
 
   const toolCategories = new Map<string, UserInputTool[]>();
 
-  // Process each tool for Seat and Plan optimization
+  // 1 & 2. Seat and Plan Optimization
   for (const userTool of input.tools) {
     const pricing = PRICING_DATA.find(p => p.name === userTool.name && p.plan === userTool.plan);
     if (!pricing) continue;
 
     let currentToolSeats = userTool.seats;
 
-    // 1. Seat Optimization: Detect over-provisioned seats
+    // Seat Optimization
     if (currentToolSeats > input.teamSize) {
       const overProvisionedSeats = currentToolSeats - input.teamSize;
       const savings = overProvisionedSeats * pricing.costPerSeat;
@@ -71,17 +71,15 @@ export function runAudit(input: AuditInput): Omit<AuditResult, 'aiSummary'> {
       currentToolSeats = input.teamSize;
     }
 
-    // 2. Plan Downgrade: Detect enterprise/business plans where basic/pro suffices
+    // Plan Downgrade
     if (pricing.costPerSeat > 0) {
       let targetPlan: string | null = null;
       let downgradeReason = "";
 
-      // Logic: If use case doesn't match the tool's primary strength, suggest free/lower tier
       if (pricing.category === 'writing' && input.primaryUseCase === 'coding') {
         targetPlan = "Free";
         downgradeReason = `As a coding-focused team, the free tier of ${userTool.name} is sufficient for occasional documentation.`;
       } else if (pricing.isTeamPlan && input.teamSize <= 2) {
-        // Suggest individual/pro plan if team is very small
         const proPlan = PRICING_DATA.find(p => p.name === userTool.name && !p.isTeamPlan && p.costPerSeat > 0);
         if (proPlan && proPlan.costPerSeat < pricing.costPerSeat) {
           targetPlan = proPlan.plan;
@@ -110,6 +108,44 @@ export function runAudit(input: AuditInput): Omit<AuditResult, 'aiSummary'> {
       }
     }
 
+    // 3. Cross-Vendor Optimization (Switching tools)
+    // We only suggest switching between "Pro" or "Business" plans to maintain parity.
+    // If user is on a paid plan, we suggest the cheapest alternative PAID plan in the same category.
+    if (pricing.costPerSeat > 0) {
+      const categoryAlternatives = PRICING_DATA.filter(p => 
+        p.category === pricing.category && 
+        p.name !== userTool.name && 
+        p.costPerSeat > 0 && // Must be a paid alternative
+        p.costPerSeat < pricing.costPerSeat // Must be cheaper
+      ).sort((a, b) => a.costPerSeat - b.costPerSeat);
+
+      if (categoryAlternatives.length > 0) {
+        const cheapestAlt = categoryAlternatives[0];
+        
+        // Suggest if savings are meaningful (> 25% cheaper)
+        if (pricing.costPerSeat > cheapestAlt.costPerSeat * 1.25) {
+          const savings = (pricing.costPerSeat - cheapestAlt.costPerSeat) * currentToolSeats;
+          
+          // Check if we already recommended something better
+          const existingRec = recommendations.find(r => r.tool === userTool.name);
+          
+          if (savings > 0 && (!existingRec || existingRec.savingsMonthly < savings)) {
+            recommendations.push({
+              tool: userTool.name,
+              currentPlan: `${userTool.plan} ($${pricing.costPerSeat}/seat)`,
+              recommendedPlan: `${cheapestAlt.name} ${cheapestAlt.plan} ($${cheapestAlt.costPerSeat}/seat)`,
+              recommendedAction: `Switch from ${userTool.name} to ${cheapestAlt.name}`,
+              savingsMonthly: savings,
+              savingsAnnual: savings * 12,
+              reason: `${cheapestAlt.name} offers similar ${pricing.category} capabilities at a more competitive price point for your team.`,
+              type: 'cross_vendor'
+            });
+            totalSavingsMonthly += savings;
+          }
+        }
+      }
+    }
+
     // Group for duplicate detection
     if (!toolCategories.has(pricing.category)) {
       toolCategories.set(pricing.category, []);
@@ -117,10 +153,9 @@ export function runAudit(input: AuditInput): Omit<AuditResult, 'aiSummary'> {
     toolCategories.get(pricing.category)!.push({ ...userTool, seats: currentToolSeats });
   }
 
-  // 3. Duplicate Tool Detection
+  // 4. Duplicate Tool Detection (Handles cross-vendor overlap)
   toolCategories.forEach((toolsInCategory, category) => {
     if (toolsInCategory.length > 1) {
-      // Keep the most "efficient" or standard tool, suggest cancelling others
       const sortedTools = toolsInCategory
         .map(t => ({
           tool: t,
@@ -151,7 +186,7 @@ export function runAudit(input: AuditInput): Omit<AuditResult, 'aiSummary'> {
     }
   });
 
-  // 4. Global Insight & Impact Marking
+  // 5. Global Insight & Impact Marking
   let globalInsight: GlobalInsight | undefined;
   if (totalSavingsMonthly > 500) {
     globalInsight = {
@@ -159,8 +194,6 @@ export function runAudit(input: AuditInput): Omit<AuditResult, 'aiSummary'> {
       description: `Your stack has significant optimization potential. Implementing these changes will save over $${(totalSavingsMonthly * 12).toLocaleString()} annually.`,
       savingsYearly: totalSavingsMonthly * 12
     };
-  } else if (totalSavingsMonthly > 0 && totalSavingsMonthly < 100) {
-    // We still return recommendations but log that it's "mostly optimized"
   }
 
   return {

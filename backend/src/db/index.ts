@@ -111,5 +111,27 @@ export const persistence = {
     } else {
       return !!fileDb.get('audits', id);
     }
+  },
+  saveSubscription: async (sub: any) => {
+    if (isPostgresConnected) {
+      await pool.query(
+        'INSERT INTO subscriptions (id, email) VALUES ($1, $2)',
+        [sub.id, sub.email]
+      );
+    } else {
+      fileDb.save('subscriptions', sub.id, sub);
+    }
+  },
+  findSubscriptionByEmail: async (email: string) => {
+    if (isPostgresConnected) {
+      try {
+        const res = await pool.query('SELECT id FROM subscriptions WHERE email = $1', [email]);
+        return res.rows.length > 0;
+      } catch (e) {
+        return !!fileDb.findSubscriptionByEmail(email);
+      }
+    } else {
+      return !!fileDb.findSubscriptionByEmail(email);
+    }
   }
 };

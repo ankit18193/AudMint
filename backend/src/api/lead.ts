@@ -13,10 +13,18 @@ const LeadSchema = z.object({
   company: z.string().optional(),
   role: z.string().optional(),
   teamSize: z.number().int().min(1).optional(),
+  company_website: z.string().optional(),
 });
 
 router.post('/', async (req, res) => {
   try {
+    // Honeypot check: If the field is present and not empty, it's likely a bot
+    if (req.body.company_website && req.body.company_website.length > 0) {
+      console.warn('Bot detected via honeypot:', req.body.email);
+      // Return generic success to avoid tipping off the bot
+      return res.json({ success: true, message: 'Success! Your report has been dispatched to your inbox.' });
+    }
+
     const validatedData = LeadSchema.parse(req.body);
     const { email, company, role, teamSize, auditId } = validatedData;
 

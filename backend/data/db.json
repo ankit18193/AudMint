@@ -196,6 +196,128 @@
       "aiSummary": "We identified $23,664 in potential annual savings. The most significant opportunity is with GitHub Copilot, where you can save $20,064 by reduce github copilot seats from 110 to 22. We recommend consolidating duplicate tools and trimming excess seats to maintain a lean, high-ROI AI stack.",
       "createdAt": "2026-05-10T16:55:19.876Z",
       "created_at": "2026-05-10T16:55:19.878Z"
+    },
+    "007a0f78-940f-45b5-8a43-f72766148535": {
+      "id": "007a0f78-940f-45b5-8a43-f72766148535",
+      "teamSize": 40,
+      "primaryUseCase": "mixed",
+      "tools": [
+        {
+          "name": "GitHub Copilot",
+          "plan": "Business",
+          "seats": 19
+        },
+        {
+          "name": "ChatGPT",
+          "plan": "Plus",
+          "seats": 31
+        }
+      ],
+      "totalSavingsMonthly": 76,
+      "totalSavingsYearly": 912,
+      "recommendations": [
+        {
+          "tool": "GitHub Copilot",
+          "currentPlan": "Business ($19/seat)",
+          "recommendedPlan": "Windsurf Pro ($15/seat)",
+          "recommendedAction": "Switch from GitHub Copilot to Windsurf",
+          "savingsMonthly": 76,
+          "savingsAnnual": 912,
+          "reason": "Windsurf offers similar coding capabilities at a more competitive price point for your team.",
+          "type": "cross_vendor"
+        }
+      ],
+      "aiSummary": "Your AI stack is already highly optimized. Our analysis shows your current configuration is lean and well-aligned with your team size and use cases. We found less than $100 in monthly savings, which suggests a high-efficiency operation. No major changes recommended.",
+      "createdAt": "2026-05-10T19:55:10.082Z",
+      "created_at": "2026-05-10T19:55:10.103Z"
+    },
+    "d0e20d99-56d1-44ed-be62-7fa5faaf5398": {
+      "id": "d0e20d99-56d1-44ed-be62-7fa5faaf5398",
+      "teamSize": 40,
+      "primaryUseCase": "mixed",
+      "tools": [
+        {
+          "name": "GitHub Copilot",
+          "plan": "Business",
+          "seats": 19
+        },
+        {
+          "name": "ChatGPT",
+          "plan": "Plus",
+          "seats": 31
+        }
+      ],
+      "totalSavingsMonthly": 76,
+      "totalSavingsYearly": 912,
+      "recommendations": [
+        {
+          "tool": "GitHub Copilot",
+          "currentPlan": "Business ($19/seat)",
+          "recommendedPlan": "Windsurf Pro ($15/seat)",
+          "recommendedAction": "Switch from GitHub Copilot to Windsurf",
+          "savingsMonthly": 76,
+          "savingsAnnual": 912,
+          "reason": "Windsurf offers similar coding capabilities at a more competitive price point for your team.",
+          "type": "cross_vendor"
+        }
+      ],
+      "aiSummary": "Your AI stack is already highly optimized. Our analysis shows your current configuration is lean and well-aligned with your team size and use cases. We found less than $100 in monthly savings, which suggests a high-efficiency operation. No major changes recommended.",
+      "createdAt": "2026-05-10T19:55:14.872Z",
+      "created_at": "2026-05-10T19:55:14.902Z"
+    },
+    "59f5f395-d036-42d0-af3b-ff0eb702b160": {
+      "id": "59f5f395-d036-42d0-af3b-ff0eb702b160",
+      "teamSize": 47,
+      "primaryUseCase": "coding",
+      "tools": [
+        {
+          "name": "Cursor",
+          "plan": "Hobby",
+          "seats": 11
+        },
+        {
+          "name": "GitHub Copilot",
+          "plan": "Business",
+          "seats": 10
+        },
+        {
+          "name": "ChatGPT",
+          "plan": "Plus",
+          "seats": 9
+        },
+        {
+          "name": "Claude",
+          "plan": "Free",
+          "seats": 9
+        }
+      ],
+      "totalSavingsMonthly": 220,
+      "totalSavingsYearly": 2640,
+      "recommendations": [
+        {
+          "tool": "GitHub Copilot",
+          "currentPlan": "Business ($19/seat)",
+          "recommendedPlan": "Windsurf Pro ($15/seat)",
+          "recommendedAction": "Switch from GitHub Copilot to Windsurf",
+          "savingsMonthly": 40,
+          "savingsAnnual": 480,
+          "reason": "Windsurf offers similar coding capabilities at a more competitive price point for your team.",
+          "type": "cross_vendor"
+        },
+        {
+          "tool": "ChatGPT",
+          "currentPlan": "Plus",
+          "recommendedPlan": "Free",
+          "recommendedAction": "Downgrade to Free plan",
+          "savingsMonthly": 180,
+          "savingsAnnual": 2160,
+          "reason": "As a coding-focused team, the free tier of ChatGPT is sufficient for occasional documentation.",
+          "type": "tier_downgrade"
+        }
+      ],
+      "aiSummary": "We identified $2,640 in potential annual savings. The most significant opportunity is with GitHub Copilot, where you can save $480 by switch from github copilot to windsurf. We recommend consolidating duplicate tools and trimming excess seats to maintain a lean, high-ROI AI stack.",
+      "createdAt": "2026-05-10T19:58:17.447Z",
+      "created_at": "2026-05-10T19:58:17.448Z"
     }
   },
   "leads": {
@@ -205,6 +327,27 @@
       "auditId": "b017396d-0629-4e23-9c13-f1ae6191ef65",
       "audit_id": "b017396d-0629-4e23-9c13-f1ae6191ef65",
       "created_at": "2026-05-10T16:57:34.068Z"
+    },
+    "240077e7-ba6c-44dd-bbb0-0453b0b19bb8": {
+      "id": "240077e7-ba6c-44dd-bbb0-0453b0b19bb8",
+      "email": "ankityadav18193@gmail.com",
+      "auditId": "59f5f395-d036-42d0-af3b-ff0eb702b160",
+      "audit_id": "59f5f395-d036-42d0-af3b-ff0eb702b160",
+      "created_at": "2026-05-10T19:59:36.170Z"
+    },
+    "1928c32e-7d19-40c8-a98a-6f39f107a591": {
+      "id": "1928c32e-7d19-40c8-a98a-6f39f107a591",
+      "email": "test_real_123@example.com",
+      "auditId": "59f5f395-d036-42d0-af3b-ff0eb702b160",
+      "audit_id": "59f5f395-d036-42d0-af3b-ff0eb702b160",
+      "created_at": "2026-05-10T20:07:53.344Z"
+    }
+  },
+  "subscriptions": {
+    "8a65603b-7fc0-4131-8eb9-dbb3c5834968": {
+      "id": "8a65603b-7fc0-4131-8eb9-dbb3c5834968",
+      "email": "sub_test_123@example.com",
+      "created_at": "2026-05-10T20:21:40.481Z"
     }
   }
 }

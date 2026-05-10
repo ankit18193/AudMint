@@ -5,6 +5,7 @@ import rateLimit from 'express-rate-limit';
 import auditRouter from './api/audit';
 import leadRouter from './api/lead';
 import reportRouter from './api/report';
+import subscribeRouter from './api/subscribe';
 
 dotenv.config();
 
@@ -26,6 +27,7 @@ app.use(limiter);
 app.use('/api/audit', auditRouter);
 app.use('/api/lead', leadRouter);
 app.use('/api/report', reportRouter);
+app.use('/api/subscribe', subscribeRouter);
 
 // Global Error Handler
 app.use((err: any, req: express.Request, res: express.Response, next: express.NextFunction) => {
