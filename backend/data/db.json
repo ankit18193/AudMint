@@ -318,6 +318,60 @@
       "aiSummary": "We identified $2,640 in potential annual savings. The most significant opportunity is with GitHub Copilot, where you can save $480 by switch from github copilot to windsurf. We recommend consolidating duplicate tools and trimming excess seats to maintain a lean, high-ROI AI stack.",
       "createdAt": "2026-05-10T19:58:17.447Z",
       "created_at": "2026-05-10T19:58:17.448Z"
+    },
+    "5337f925-850c-48c4-801e-68dd44e460e1": {
+      "id": "5337f925-850c-48c4-801e-68dd44e460e1",
+      "teamSize": 17,
+      "primaryUseCase": "coding",
+      "tools": [
+        {
+          "name": "ChatGPT",
+          "plan": "Plus",
+          "seats": 5
+        },
+        {
+          "name": "Claude",
+          "plan": "Pro",
+          "seats": 8
+        }
+      ],
+      "totalSavingsMonthly": 420,
+      "totalSavingsYearly": 5040,
+      "recommendations": [
+        {
+          "tool": "ChatGPT",
+          "currentPlan": "Plus",
+          "recommendedPlan": "Free",
+          "recommendedAction": "Downgrade to Free plan",
+          "savingsMonthly": 100,
+          "savingsAnnual": 1200,
+          "reason": "As a coding-focused team, the free tier of ChatGPT is sufficient for occasional documentation.",
+          "type": "tier_downgrade"
+        },
+        {
+          "tool": "Claude",
+          "currentPlan": "Pro",
+          "recommendedPlan": "Free",
+          "recommendedAction": "Downgrade to Free plan",
+          "savingsMonthly": 160,
+          "savingsAnnual": 1920,
+          "reason": "As a coding-focused team, the free tier of Claude is sufficient for occasional documentation.",
+          "type": "tier_downgrade"
+        },
+        {
+          "tool": "Claude",
+          "currentPlan": "Pro",
+          "recommendedPlan": "None (Cancel)",
+          "recommendedAction": "Consolidate Claude into ChatGPT",
+          "savingsMonthly": 160,
+          "savingsAnnual": 1920,
+          "reason": "You are paying for multiple writing tools. ChatGPT covers your needs.",
+          "type": "duplicate_tool"
+        }
+      ],
+      "aiSummary": "We identified $5,040 in potential annual savings. The most significant opportunity is with ChatGPT, where you can save $1,200 by downgrade to free plan. We recommend consolidating duplicate tools and trimming excess seats to maintain a lean, high-ROI AI stack.",
+      "createdAt": "2026-05-10T20:50:08.812Z",
+      "created_at": "2026-05-10T20:50:08.819Z"
     }
   },
   "leads": {
