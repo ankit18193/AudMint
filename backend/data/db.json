@@ -1,0 +1,210 @@
+{
+  "audits": {
+    "f675ba77-d121-424e-ad96-ca793c4ae0f3": {
+      "id": "f675ba77-d121-424e-ad96-ca793c4ae0f3",
+      "teamSize": 4410,
+      "primaryUseCase": "coding",
+      "tools": [
+        {
+          "name": "GitHub Copilot",
+          "plan": "Individual",
+          "seats": 3
+        },
+        {
+          "name": "Cursor",
+          "plan": "Pro",
+          "seats": 2
+        },
+        {
+          "name": "Claude",
+          "plan": "Pro",
+          "seats": 2
+        },
+        {
+          "name": "ChatGPT",
+          "plan": "Plus",
+          "seats": 3
+        }
+      ],
+      "totalSavingsMonthly": 160,
+      "totalSavingsYearly": 1920,
+      "recommendations": [
+        {
+          "tool": "Claude",
+          "currentPlan": "Pro",
+          "recommendedPlan": "Free",
+          "recommendedAction": "Downgrade to Free plan",
+          "savingsMonthly": 40,
+          "savingsAnnual": 480,
+          "reason": "As a coding-focused team, you can likely use the free tier of Claude for general writing tasks.",
+          "type": "tier_downgrade"
+        },
+        {
+          "tool": "ChatGPT",
+          "currentPlan": "Plus",
+          "recommendedPlan": "Free",
+          "recommendedAction": "Downgrade to Free plan",
+          "savingsMonthly": 60,
+          "savingsAnnual": 720,
+          "reason": "As a coding-focused team, you can likely use the free tier of ChatGPT for general writing tasks.",
+          "type": "tier_downgrade"
+        },
+        {
+          "tool": "ChatGPT",
+          "currentPlan": "Plus",
+          "recommendedPlan": "None (Cancel)",
+          "recommendedAction": "Consolidate ChatGPT into Claude",
+          "savingsMonthly": 60,
+          "savingsAnnual": 720,
+          "reason": "Overlapping functionality with Claude. Both are writing tools.",
+          "type": "duplicate_tool"
+        }
+      ],
+      "globalInsight": {
+        "title": "Tool Consolidation Opportunity",
+        "description": "You are currently paying for 2 different tools in the same categories. Consolidating could save $720 per year.",
+        "savingsYearly": 720
+      },
+      "aiSummary": "Your audit is complete. Based on the hard data, we found $160 in monthly savings by optimizing your seats and tool redundancies. Review the detailed breakdown below to take action.",
+      "createdAt": "2026-05-10T16:16:52.936Z",
+      "created_at": "2026-05-10T16:16:52.937Z"
+    },
+    "2cad2e53-e41a-44c8-b6e0-8e509033e034": {
+      "id": "2cad2e53-e41a-44c8-b6e0-8e509033e034",
+      "teamSize": 2,
+      "primaryUseCase": "coding",
+      "tools": [
+        {
+          "name": "GitHub Copilot",
+          "plan": "Individual",
+          "seats": 1
+        },
+        {
+          "name": "Cursor",
+          "plan": "Hobby",
+          "seats": 1
+        },
+        {
+          "name": "Claude",
+          "plan": "Pro",
+          "seats": 1
+        },
+        {
+          "name": "ChatGPT",
+          "plan": "Plus",
+          "seats": 1
+        }
+      ],
+      "totalSavingsMonthly": 60,
+      "totalSavingsYearly": 720,
+      "recommendations": [
+        {
+          "tool": "Claude",
+          "currentPlan": "Pro",
+          "recommendedPlan": "Free",
+          "recommendedAction": "Downgrade to Free plan",
+          "savingsMonthly": 20,
+          "savingsAnnual": 240,
+          "reason": "As a coding-focused team, you can likely use the free tier of Claude for general writing tasks.",
+          "type": "tier_downgrade"
+        },
+        {
+          "tool": "ChatGPT",
+          "currentPlan": "Plus",
+          "recommendedPlan": "Free",
+          "recommendedAction": "Downgrade to Free plan",
+          "savingsMonthly": 20,
+          "savingsAnnual": 240,
+          "reason": "As a coding-focused team, you can likely use the free tier of ChatGPT for general writing tasks.",
+          "type": "tier_downgrade"
+        },
+        {
+          "tool": "ChatGPT",
+          "currentPlan": "Plus",
+          "recommendedPlan": "None (Cancel)",
+          "recommendedAction": "Consolidate ChatGPT into Claude",
+          "savingsMonthly": 20,
+          "savingsAnnual": 240,
+          "reason": "Overlapping functionality with Claude. Both are writing tools.",
+          "type": "duplicate_tool"
+        }
+      ],
+      "globalInsight": {
+        "title": "Tool Consolidation Opportunity",
+        "description": "You are currently paying for 2 different tools in the same categories. Consolidating could save $240 per year.",
+        "savingsYearly": 240
+      },
+      "aiSummary": "Your audit is complete. Based on the hard data, we found $60 in monthly savings by optimizing your seats and tool redundancies. Review the detailed breakdown below to take action.",
+      "createdAt": "2026-05-10T16:19:37.801Z",
+      "created_at": "2026-05-10T16:19:37.802Z"
+    },
+    "b017396d-0629-4e23-9c13-f1ae6191ef65": {
+      "id": "b017396d-0629-4e23-9c13-f1ae6191ef65",
+      "teamSize": 22,
+      "primaryUseCase": "coding",
+      "tools": [
+        {
+          "name": "GitHub Copilot",
+          "plan": "Business",
+          "seats": 110
+        },
+        {
+          "name": "ChatGPT",
+          "plan": "Plus",
+          "seats": 15
+        },
+        {
+          "name": "Cursor",
+          "plan": "Hobby",
+          "seats": 1
+        },
+        {
+          "name": "Claude",
+          "plan": "Free",
+          "seats": 1
+        }
+      ],
+      "totalSavingsMonthly": 1972,
+      "totalSavingsYearly": 23664,
+      "recommendations": [
+        {
+          "tool": "GitHub Copilot",
+          "currentPlan": "Business (110 seats)",
+          "recommendedPlan": "Business (22 seats)",
+          "recommendedAction": "Reduce GitHub Copilot seats from 110 to 22",
+          "savingsMonthly": 1672,
+          "savingsAnnual": 20064,
+          "reason": "Your reported team size is 22, but you are paying for 110 seats.",
+          "type": "seat_optimization"
+        },
+        {
+          "tool": "ChatGPT",
+          "currentPlan": "Plus",
+          "recommendedPlan": "Free",
+          "recommendedAction": "Downgrade to Free plan",
+          "savingsMonthly": 300,
+          "savingsAnnual": 3600,
+          "reason": "As a coding-focused team, the free tier of ChatGPT is sufficient for occasional documentation.",
+          "type": "tier_downgrade"
+        }
+      ],
+      "globalInsight": {
+        "title": "High-Impact Savings Identified",
+        "description": "Your stack has significant optimization potential. Implementing these changes will save over $23,664 annually.",
+        "savingsYearly": 23664
+      },
+      "aiSummary": "We identified $23,664 in potential annual savings. The most significant opportunity is with GitHub Copilot, where you can save $20,064 by reduce github copilot seats from 110 to 22. We recommend consolidating duplicate tools and trimming excess seats to maintain a lean, high-ROI AI stack.",
+      "createdAt": "2026-05-10T16:55:19.876Z",
+      "created_at": "2026-05-10T16:55:19.878Z"
+    }
+  },
+  "leads": {
+    "77546b18-9f1d-4448-a70f-bf5407b82668": {
+      "id": "77546b18-9f1d-4448-a70f-bf5407b82668",
+      "email": "ankityadav18193@gmail.com",
+      "auditId": "b017396d-0629-4e23-9c13-f1ae6191ef65",
+      "audit_id": "b017396d-0629-4e23-9c13-f1ae6191ef65",
+      "created_at": "2026-05-10T16:57:34.068Z"
+    }
+  }
+}
