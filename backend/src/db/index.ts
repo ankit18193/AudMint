@@ -1,29 +1,27 @@
 import { Pool } from 'pg';
-import dotenv from 'dotenv';
 import { fileDb } from './fileStore';
+import { logger } from '../utils/logger';
+import { config } from '../config/env';
 
-dotenv.config();
-
-const dbUrl = process.env.DATABASE_URL;
+const dbUrl = config.databaseUrl;
 let isPostgresConnected = false;
 
 export const pool = new Pool({
   connectionString: dbUrl || 'postgres://localhost:5432/postgres',
-  ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false,
+  ssl: config.nodeEnv === 'production' ? { rejectUnauthorized: false } : false,
   connectionTimeoutMillis: 2000, // Faster timeout for local dev
 });
 
 // Attempt connection but don't crash if it fails
 pool.connect()
   .then(client => {
-    console.log('✅ PostgreSQL connected successfully.');
+    logger.logInfo('PostgreSQL connected successfully');
     isPostgresConnected = true;
     client.release();
   })
   .catch(err => {
-    console.warn('⚠️ Database Connection Failed:', err.message);
-    console.log('🔄 PERSISTENCE FALLBACK: Using persistent local storage (data/db.json).');
-    console.log('Ensure your PostgreSQL server is running for production-grade SQL features.');
+    logger.logWarn('Database Connection Failed', { message: err.message });
+    logger.logInfo('PERSISTENCE FALLBACK: Using persistent local storage (data/db.json)');
   });
 
 // Unified persistence helper (PostgreSQL with File Fallback)
@@ -32,14 +30,15 @@ export const persistence = {
     if (isPostgresConnected) {
       await pool.query(
         `INSERT INTO audits (
-          id, tools, total_monthly_savings, total_annual_savings, recommendations, ai_summary,
+          id, tools, total_monthly_savings, total_annual_savings, spend_per_member, recommendations, ai_summary,
           global_insight_title, global_insight_description, global_insight_savings
-        ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)`,
+        ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)`,
         [
           audit.id,
           JSON.stringify(audit.tools),
           audit.totalSavingsMonthly,
           audit.totalSavingsYearly,
+          audit.spendPerMember || 0,
           JSON.stringify(audit.recommendations),
           audit.aiSummary,
           audit.globalInsight?.title || null,
@@ -62,6 +61,7 @@ export const persistence = {
           tools: typeof row.tools === 'string' ? JSON.parse(row.tools) : row.tools,
           totalSavingsMonthly: parseFloat(row.total_monthly_savings),
           totalSavingsYearly: parseFloat(row.total_annual_savings),
+          spendPerMember: parseFloat(row.spend_per_member || 0),
           recommendations: typeof row.recommendations === 'string' ? JSON.parse(row.recommendations) : row.recommendations,
           aiSummary: row.ai_summary,
           globalInsight: row.global_insight_title ? {
@@ -71,6 +71,7 @@ export const persistence = {
           } : undefined,
           createdAt: row.created_at
         };
+
       } catch (e) {
         return fileDb.get('audits', id);
       }

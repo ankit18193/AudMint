@@ -1,7 +1,8 @@
 import { Router } from 'express';
 import { z } from 'zod';
-import { randomUUID } from 'crypto';
-import { persistence } from '../db';
+import { subscriptionService } from '../services/subscriptionService';
+import { logger } from '../utils/logger';
+import { strictLimiter } from '../middleware/rateLimit';
 
 const router = Router();
 
@@ -10,11 +11,12 @@ const SubscribeSchema = z.object({
   company_website: z.string().optional(), // Honeypot
 });
 
-router.post('/', async (req, res) => {
+router.post('/', strictLimiter, async (req, res) => {
+  logger.logInfo('Subscription request received');
   try {
     // 1. Honeypot check
     if (req.body.company_website && req.body.company_website.length > 0) {
-      console.warn('Bot detected via honeypot in subscribe:', req.body.email);
+      logger.logWarn('Bot detected via honeypot in subscribe', { email: req.body.email });
       return res.json({ success: true, message: 'Success! You will be notified of new optimizations.' });
     }
 
@@ -22,22 +24,17 @@ router.post('/', async (req, res) => {
     const validatedData = SubscribeSchema.parse(req.body);
     const { email } = validatedData;
 
-    // 3. Duplicate check
-    const existing = await persistence.findSubscriptionByEmail(email);
-    if (existing) {
-      return res.json({ success: true, message: 'Success! You will be notified of new optimizations.' });
-    }
+    // 3. Call service
+    await subscriptionService.subscribe(email);
 
-    // 4. Save
-    const id = randomUUID();
-    await persistence.saveSubscription({ id, email });
-
+    logger.logInfo('Subscription successful');
     res.json({ success: true, message: 'Success! You will be notified of new optimizations.' });
-  } catch (error) {
+  } catch (error: any) {
     if (error instanceof z.ZodError) {
+      logger.logWarn('Subscription validation failed');
       return res.status(400).json({ success: false, message: error.issues[0].message });
     }
-    console.error('Subscription API Error:', error);
+    logger.logError('Subscription API Error', { message: error.message });
     res.status(500).json({ success: false, message: 'Could not process your request. Please try again.' });
   }
 });

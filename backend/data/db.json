@@ -372,6 +372,1099 @@
       "aiSummary": "We identified $5,040 in potential annual savings. The most significant opportunity is with ChatGPT, where you can save $1,200 by downgrade to free plan. We recommend consolidating duplicate tools and trimming excess seats to maintain a lean, high-ROI AI stack.",
       "createdAt": "2026-05-10T20:50:08.812Z",
       "created_at": "2026-05-10T20:50:08.819Z"
+    },
+    "7159c7c8-178c-446c-8bcc-a2dafe20c3d0": {
+      "id": "7159c7c8-178c-446c-8bcc-a2dafe20c3d0",
+      "teamSize": 10,
+      "primaryUseCase": "coding",
+      "tools": [
+        {
+          "name": "Cursor",
+          "plan": "Business",
+          "seats": 10
+        }
+      ],
+      "totalSavingsMonthly": 300,
+      "totalSavingsYearly": 3600,
+      "recommendations": [
+        {
+          "tool": "Cursor",
+          "currentPlan": "Business ($40/seat)",
+          "recommendedPlan": "GitHub Copilot Pro ($10/seat)",
+          "recommendedAction": "Switch from Cursor to GitHub Copilot",
+          "savingsMonthly": 300,
+          "savingsAnnual": 3600,
+          "reason": "GitHub Copilot offers similar coding capabilities at a more competitive price point for your team.",
+          "type": "cross_vendor"
+        }
+      ],
+      "aiSummary": "We identified $3,600 in potential annual savings. The most significant opportunity is with Cursor, where you can save $3,600 by switch from cursor to github copilot. We recommend consolidating duplicate tools and trimming excess seats to maintain a lean, high-ROI AI stack.",
+      "createdAt": "2026-05-10T21:08:28.251Z",
+      "created_at": "2026-05-10T21:08:28.252Z"
+    },
+    "581ee3f4-e0b9-4fd9-935d-3639a0df85b0": {
+      "id": "581ee3f4-e0b9-4fd9-935d-3639a0df85b0",
+      "teamSize": 10,
+      "primaryUseCase": "coding",
+      "tools": [
+        {
+          "name": "Cursor",
+          "plan": "Business",
+          "seats": 10
+        }
+      ],
+      "totalSavingsMonthly": 300,
+      "totalSavingsYearly": 3600,
+      "recommendations": [
+        {
+          "tool": "Cursor",
+          "currentPlan": "Business ($40/seat)",
+          "recommendedPlan": "GitHub Copilot Pro ($10/seat)",
+          "recommendedAction": "Switch from Cursor to GitHub Copilot",
+          "savingsMonthly": 300,
+          "savingsAnnual": 3600,
+          "reason": "GitHub Copilot offers similar coding capabilities at a more competitive price point for your team.",
+          "type": "cross_vendor"
+        }
+      ],
+      "aiSummary": "We identified $3,600 in potential annual savings. The most significant opportunity is with Cursor, where you can save $3,600 by switch from cursor to github copilot. We recommend consolidating duplicate tools and trimming excess seats to maintain a lean, high-ROI AI stack.",
+      "createdAt": "2026-05-10T21:17:43.351Z",
+      "created_at": "2026-05-10T21:17:43.351Z"
+    },
+    "369a24b9-f0a2-4104-ab88-387258b6233c": {
+      "id": "369a24b9-f0a2-4104-ab88-387258b6233c",
+      "teamSize": 10,
+      "primaryUseCase": "coding",
+      "tools": [
+        {
+          "name": "Cursor",
+          "plan": "Business",
+          "seats": 10
+        }
+      ],
+      "totalSavingsMonthly": 300,
+      "totalSavingsYearly": 3600,
+      "recommendations": [
+        {
+          "tool": "Cursor",
+          "currentPlan": "Business ($40/seat)",
+          "recommendedPlan": "GitHub Copilot Pro ($10/seat)",
+          "recommendedAction": "Switch from Cursor to GitHub Copilot",
+          "savingsMonthly": 300,
+          "savingsAnnual": 3600,
+          "reason": "GitHub Copilot offers similar coding capabilities at a more competitive price point for your team.",
+          "type": "cross_vendor"
+        }
+      ],
+      "aiSummary": "We identified $3,600 in potential annual savings. The most significant opportunity is with Cursor, where you can save $3,600 by switch from cursor to github copilot. We recommend consolidating duplicate tools and trimming excess seats to maintain a lean, high-ROI AI stack.",
+      "createdAt": "2026-05-10T21:24:34.983Z",
+      "created_at": "2026-05-10T21:24:34.983Z"
+    },
+    "353622e0-4f83-42f1-9967-bfd8dc31fbb2": {
+      "id": "353622e0-4f83-42f1-9967-bfd8dc31fbb2",
+      "teamSize": 10,
+      "primaryUseCase": "coding",
+      "tools": [
+        {
+          "name": "Cursor",
+          "plan": "Business",
+          "seats": 10
+        }
+      ],
+      "totalSavingsMonthly": 300,
+      "totalSavingsYearly": 3600,
+      "recommendations": [
+        {
+          "tool": "Cursor",
+          "currentPlan": "Business ($40/seat)",
+          "recommendedPlan": "GitHub Copilot Pro ($10/seat)",
+          "recommendedAction": "Switch from Cursor to GitHub Copilot",
+          "savingsMonthly": 300,
+          "savingsAnnual": 3600,
+          "reason": "GitHub Copilot offers similar coding capabilities at a more competitive price point for your team.",
+          "type": "cross_vendor"
+        }
+      ],
+      "aiSummary": "We identified $3,600 in potential annual savings. The most significant opportunity is with Cursor, where you can save $3,600 by switch from cursor to github copilot. We recommend consolidating duplicate tools and trimming excess seats to maintain a lean, high-ROI AI stack.",
+      "createdAt": "2026-05-10T21:47:29.663Z",
+      "created_at": "2026-05-10T21:47:29.664Z"
+    },
+    "c0b55ef8-03ba-4ca5-952f-f201e2fd3b9c": {
+      "id": "c0b55ef8-03ba-4ca5-952f-f201e2fd3b9c",
+      "teamSize": 10,
+      "primaryUseCase": "coding",
+      "tools": [
+        {
+          "name": "Cursor",
+          "plan": "Business",
+          "seats": 10
+        }
+      ],
+      "totalSavingsMonthly": 300,
+      "totalSavingsYearly": 3600,
+      "recommendations": [
+        {
+          "tool": "Cursor",
+          "currentPlan": "Business ($40/seat)",
+          "recommendedPlan": "GitHub Copilot Pro ($10/seat)",
+          "recommendedAction": "Switch from Cursor to GitHub Copilot",
+          "savingsMonthly": 300,
+          "savingsAnnual": 3600,
+          "reason": "GitHub Copilot offers similar coding capabilities at a more competitive price point for your team.",
+          "type": "cross_vendor"
+        }
+      ],
+      "aiSummary": "We identified $3,600 in potential annual savings. The most significant opportunity is with Cursor, where you can save $3,600 by switch from cursor to github copilot. We recommend consolidating duplicate tools and trimming excess seats to maintain a lean, high-ROI AI stack.",
+      "createdAt": "2026-05-10T21:56:06.734Z",
+      "created_at": "2026-05-10T21:56:06.735Z"
+    },
+    "c5f12064-6481-4bad-a961-899d0c6103a6": {
+      "id": "c5f12064-6481-4bad-a961-899d0c6103a6",
+      "teamSize": 10,
+      "primaryUseCase": "coding",
+      "tools": [
+        {
+          "name": "Cursor",
+          "plan": "Business",
+          "seats": 10
+        }
+      ],
+      "totalSavingsMonthly": 300,
+      "totalSavingsYearly": 3600,
+      "recommendations": [
+        {
+          "tool": "Cursor",
+          "currentPlan": "Business ($40/seat)",
+          "recommendedPlan": "GitHub Copilot Pro ($10/seat)",
+          "recommendedAction": "Switch from Cursor to GitHub Copilot",
+          "savingsMonthly": 300,
+          "savingsAnnual": 3600,
+          "reason": "GitHub Copilot offers similar coding capabilities at a more competitive price point for your team.",
+          "type": "cross_vendor"
+        }
+      ],
+      "aiSummary": "We identified $3,600 in potential annual savings. The most significant opportunity is with Cursor, where you can save $3,600 by switch from cursor to github copilot. We recommend consolidating duplicate tools and trimming excess seats to maintain a lean, high-ROI AI stack.",
+      "createdAt": "2026-05-10T21:56:06.801Z",
+      "created_at": "2026-05-10T21:56:06.801Z"
+    },
+    "b3276b6c-ba6f-47b7-af17-4ce2d7922ced": {
+      "id": "b3276b6c-ba6f-47b7-af17-4ce2d7922ced",
+      "teamSize": 10,
+      "primaryUseCase": "coding",
+      "tools": [
+        {
+          "name": "Cursor",
+          "plan": "Business",
+          "seats": 10
+        }
+      ],
+      "totalSavingsMonthly": 300,
+      "totalSavingsYearly": 3600,
+      "recommendations": [
+        {
+          "tool": "Cursor",
+          "currentPlan": "Business ($40/seat)",
+          "recommendedPlan": "GitHub Copilot Pro ($10/seat)",
+          "recommendedAction": "Switch from Cursor to GitHub Copilot",
+          "savingsMonthly": 300,
+          "savingsAnnual": 3600,
+          "reason": "GitHub Copilot offers similar coding capabilities at a more competitive price point for your team.",
+          "type": "cross_vendor"
+        }
+      ],
+      "aiSummary": "We identified $3,600 in potential annual savings. The most significant opportunity is with Cursor, where you can save $3,600 by switch from cursor to github copilot. We recommend consolidating duplicate tools and trimming excess seats to maintain a lean, high-ROI AI stack.",
+      "createdAt": "2026-05-10T21:56:06.806Z",
+      "created_at": "2026-05-10T21:56:06.806Z"
+    },
+    "0c57b764-2d43-493b-b6fb-ca0271be2766": {
+      "id": "0c57b764-2d43-493b-b6fb-ca0271be2766",
+      "teamSize": 10,
+      "primaryUseCase": "coding",
+      "tools": [
+        {
+          "name": "Cursor",
+          "plan": "Business",
+          "seats": 10
+        }
+      ],
+      "totalSavingsMonthly": 300,
+      "totalSavingsYearly": 3600,
+      "recommendations": [
+        {
+          "tool": "Cursor",
+          "currentPlan": "Business ($40/seat)",
+          "recommendedPlan": "GitHub Copilot Pro ($10/seat)",
+          "recommendedAction": "Switch from Cursor to GitHub Copilot",
+          "savingsMonthly": 300,
+          "savingsAnnual": 3600,
+          "reason": "GitHub Copilot offers similar coding capabilities at a more competitive price point for your team.",
+          "type": "cross_vendor"
+        }
+      ],
+      "aiSummary": "We identified $3,600 in potential annual savings. The most significant opportunity is with Cursor, where you can save $3,600 by switch from cursor to github copilot. We recommend consolidating duplicate tools and trimming excess seats to maintain a lean, high-ROI AI stack.",
+      "createdAt": "2026-05-10T21:56:06.810Z",
+      "created_at": "2026-05-10T21:56:06.811Z"
+    },
+    "5a63525c-b799-44dc-a6c0-938bc31e652e": {
+      "id": "5a63525c-b799-44dc-a6c0-938bc31e652e",
+      "teamSize": 10,
+      "primaryUseCase": "coding",
+      "tools": [
+        {
+          "name": "Cursor",
+          "plan": "Business",
+          "seats": 10
+        }
+      ],
+      "totalSavingsMonthly": 300,
+      "totalSavingsYearly": 3600,
+      "recommendations": [
+        {
+          "tool": "Cursor",
+          "currentPlan": "Business ($40/seat)",
+          "recommendedPlan": "GitHub Copilot Pro ($10/seat)",
+          "recommendedAction": "Switch from Cursor to GitHub Copilot",
+          "savingsMonthly": 300,
+          "savingsAnnual": 3600,
+          "reason": "GitHub Copilot offers similar coding capabilities at a more competitive price point for your team.",
+          "type": "cross_vendor"
+        }
+      ],
+      "aiSummary": "We identified $3,600 in potential annual savings. The most significant opportunity is with Cursor, where you can save $3,600 by switch from cursor to github copilot. We recommend consolidating duplicate tools and trimming excess seats to maintain a lean, high-ROI AI stack.",
+      "createdAt": "2026-05-10T21:56:06.817Z",
+      "created_at": "2026-05-10T21:56:06.817Z"
+    },
+    "e449c7da-c482-4f9c-9a17-acbf4cbc0e80": {
+      "id": "e449c7da-c482-4f9c-9a17-acbf4cbc0e80",
+      "teamSize": 10,
+      "primaryUseCase": "coding",
+      "tools": [
+        {
+          "name": "Cursor",
+          "plan": "Business",
+          "seats": 10
+        }
+      ],
+      "totalSavingsMonthly": 300,
+      "totalSavingsYearly": 3600,
+      "recommendations": [
+        {
+          "tool": "Cursor",
+          "currentPlan": "Business ($40/seat)",
+          "recommendedPlan": "GitHub Copilot Pro ($10/seat)",
+          "recommendedAction": "Switch from Cursor to GitHub Copilot",
+          "savingsMonthly": 300,
+          "savingsAnnual": 3600,
+          "reason": "GitHub Copilot offers similar coding capabilities at a more competitive price point for your team.",
+          "type": "cross_vendor"
+        }
+      ],
+      "aiSummary": "We identified $3,600 in potential annual savings. The most significant opportunity is with Cursor, where you can save $3,600 by switch from cursor to github copilot. We recommend consolidating duplicate tools and trimming excess seats to maintain a lean, high-ROI AI stack.",
+      "createdAt": "2026-05-10T21:56:06.822Z",
+      "created_at": "2026-05-10T21:56:06.822Z"
+    },
+    "5416773a-9485-4008-bfbd-fa4fbf6ab669": {
+      "id": "5416773a-9485-4008-bfbd-fa4fbf6ab669",
+      "teamSize": 10,
+      "primaryUseCase": "coding",
+      "tools": [
+        {
+          "name": "Cursor",
+          "plan": "Business",
+          "seats": 10
+        }
+      ],
+      "totalSavingsMonthly": 300,
+      "totalSavingsYearly": 3600,
+      "recommendations": [
+        {
+          "tool": "Cursor",
+          "currentPlan": "Business ($40/seat)",
+          "recommendedPlan": "GitHub Copilot Pro ($10/seat)",
+          "recommendedAction": "Switch from Cursor to GitHub Copilot",
+          "savingsMonthly": 300,
+          "savingsAnnual": 3600,
+          "reason": "GitHub Copilot offers similar coding capabilities at a more competitive price point for your team.",
+          "type": "cross_vendor"
+        }
+      ],
+      "aiSummary": "We identified $3,600 in potential annual savings. The most significant opportunity is with Cursor, where you can save $3,600 by switch from cursor to github copilot. We recommend consolidating duplicate tools and trimming excess seats to maintain a lean, high-ROI AI stack.",
+      "createdAt": "2026-05-10T21:57:30.926Z",
+      "created_at": "2026-05-10T21:57:30.926Z"
+    },
+    "999d87f4-00fe-4460-87c5-8a59e0648c65": {
+      "id": "999d87f4-00fe-4460-87c5-8a59e0648c65",
+      "teamSize": 10,
+      "primaryUseCase": "coding",
+      "tools": [
+        {
+          "name": "Cursor",
+          "plan": "Business",
+          "seats": 10
+        }
+      ],
+      "totalSavingsMonthly": 300,
+      "totalSavingsYearly": 3600,
+      "recommendations": [
+        {
+          "tool": "Cursor",
+          "currentPlan": "Business ($40/seat)",
+          "recommendedPlan": "GitHub Copilot Pro ($10/seat)",
+          "recommendedAction": "Switch from Cursor to GitHub Copilot",
+          "savingsMonthly": 300,
+          "savingsAnnual": 3600,
+          "reason": "GitHub Copilot offers similar coding capabilities at a more competitive price point for your team.",
+          "type": "cross_vendor"
+        }
+      ],
+      "aiSummary": "We identified $3,600 in potential annual savings. The most significant opportunity is with Cursor, where you can save $3,600 by switch from cursor to github copilot. We recommend consolidating duplicate tools and trimming excess seats to maintain a lean, high-ROI AI stack.",
+      "createdAt": "2026-05-10T21:57:30.948Z",
+      "created_at": "2026-05-10T21:57:30.949Z"
+    },
+    "968bae9c-eaa7-45d8-a981-5aecec7111b1": {
+      "id": "968bae9c-eaa7-45d8-a981-5aecec7111b1",
+      "teamSize": 10,
+      "primaryUseCase": "coding",
+      "tools": [
+        {
+          "name": "Cursor",
+          "plan": "Business",
+          "seats": 10
+        }
+      ],
+      "totalSavingsMonthly": 300,
+      "totalSavingsYearly": 3600,
+      "recommendations": [
+        {
+          "tool": "Cursor",
+          "currentPlan": "Business ($40/seat)",
+          "recommendedPlan": "GitHub Copilot Pro ($10/seat)",
+          "recommendedAction": "Switch from Cursor to GitHub Copilot",
+          "savingsMonthly": 300,
+          "savingsAnnual": 3600,
+          "reason": "GitHub Copilot offers similar coding capabilities at a more competitive price point for your team.",
+          "type": "cross_vendor"
+        }
+      ],
+      "aiSummary": "We identified $3,600 in potential annual savings. The most significant opportunity is with Cursor, where you can save $3,600 by switch from cursor to github copilot. We recommend consolidating duplicate tools and trimming excess seats to maintain a lean, high-ROI AI stack.",
+      "createdAt": "2026-05-10T21:57:30.953Z",
+      "created_at": "2026-05-10T21:57:30.953Z"
+    },
+    "d1942bef-fe30-4fd6-a145-760ce5ade3f1": {
+      "id": "d1942bef-fe30-4fd6-a145-760ce5ade3f1",
+      "teamSize": 10,
+      "primaryUseCase": "coding",
+      "tools": [
+        {
+          "name": "Cursor",
+          "plan": "Business",
+          "seats": 10
+        }
+      ],
+      "totalSavingsMonthly": 300,
+      "totalSavingsYearly": 3600,
+      "recommendations": [
+        {
+          "tool": "Cursor",
+          "currentPlan": "Business ($40/seat)",
+          "recommendedPlan": "GitHub Copilot Pro ($10/seat)",
+          "recommendedAction": "Switch from Cursor to GitHub Copilot",
+          "savingsMonthly": 300,
+          "savingsAnnual": 3600,
+          "reason": "GitHub Copilot offers similar coding capabilities at a more competitive price point for your team.",
+          "type": "cross_vendor"
+        }
+      ],
+      "aiSummary": "We identified $3,600 in potential annual savings. The most significant opportunity is with Cursor, where you can save $3,600 by switch from cursor to github copilot. We recommend consolidating duplicate tools and trimming excess seats to maintain a lean, high-ROI AI stack.",
+      "createdAt": "2026-05-10T21:57:30.959Z",
+      "created_at": "2026-05-10T21:57:30.963Z"
+    },
+    "ea339c04-159c-4999-957c-edfe860850d1": {
+      "id": "ea339c04-159c-4999-957c-edfe860850d1",
+      "teamSize": 10,
+      "primaryUseCase": "coding",
+      "tools": [
+        {
+          "name": "Cursor",
+          "plan": "Business",
+          "seats": 10
+        }
+      ],
+      "totalSavingsMonthly": 300,
+      "totalSavingsYearly": 3600,
+      "recommendations": [
+        {
+          "tool": "Cursor",
+          "currentPlan": "Business ($40/seat)",
+          "recommendedPlan": "GitHub Copilot Pro ($10/seat)",
+          "recommendedAction": "Switch from Cursor to GitHub Copilot",
+          "savingsMonthly": 300,
+          "savingsAnnual": 3600,
+          "reason": "GitHub Copilot offers similar coding capabilities at a more competitive price point for your team.",
+          "type": "cross_vendor"
+        }
+      ],
+      "aiSummary": "We identified $3,600 in potential annual savings. The most significant opportunity is with Cursor, where you can save $3,600 by switch from cursor to github copilot. We recommend consolidating duplicate tools and trimming excess seats to maintain a lean, high-ROI AI stack.",
+      "createdAt": "2026-05-10T21:57:30.967Z",
+      "created_at": "2026-05-10T21:57:30.967Z"
+    },
+    "59203bfe-5399-4bd9-9387-58d7fd0b5b17": {
+      "id": "59203bfe-5399-4bd9-9387-58d7fd0b5b17",
+      "teamSize": 10,
+      "primaryUseCase": "coding",
+      "tools": [
+        {
+          "name": "Cursor",
+          "plan": "Business",
+          "seats": 10
+        }
+      ],
+      "totalSavingsMonthly": 300,
+      "totalSavingsYearly": 3600,
+      "recommendations": [
+        {
+          "tool": "Cursor",
+          "currentPlan": "Business ($40/seat)",
+          "recommendedPlan": "GitHub Copilot Pro ($10/seat)",
+          "recommendedAction": "Switch from Cursor to GitHub Copilot",
+          "savingsMonthly": 300,
+          "savingsAnnual": 3600,
+          "reason": "GitHub Copilot offers similar coding capabilities at a more competitive price point for your team.",
+          "type": "cross_vendor"
+        }
+      ],
+      "aiSummary": "We identified $3,600 in potential annual savings. The most significant opportunity is with Cursor, where you can save $3,600 by switch from cursor to github copilot. We recommend consolidating duplicate tools and trimming excess seats to maintain a lean, high-ROI AI stack.",
+      "createdAt": "2026-05-10T21:57:30.971Z",
+      "created_at": "2026-05-10T21:57:30.972Z"
+    },
+    "54f3da4e-c4ce-4c47-bec2-288863f47174": {
+      "id": "54f3da4e-c4ce-4c47-bec2-288863f47174",
+      "teamSize": 10,
+      "primaryUseCase": "coding",
+      "tools": [
+        {
+          "name": "Cursor",
+          "plan": "Business",
+          "seats": 10
+        }
+      ],
+      "totalSavingsMonthly": 300,
+      "totalSavingsYearly": 3600,
+      "recommendations": [
+        {
+          "tool": "Cursor",
+          "currentPlan": "Business ($40/seat)",
+          "recommendedPlan": "GitHub Copilot Pro ($10/seat)",
+          "recommendedAction": "Switch from Cursor to GitHub Copilot",
+          "savingsMonthly": 300,
+          "savingsAnnual": 3600,
+          "reason": "GitHub Copilot offers similar coding capabilities at a more competitive price point for your team.",
+          "type": "cross_vendor"
+        }
+      ],
+      "aiSummary": "We identified $3,600 in potential annual savings. The most significant opportunity is with Cursor, where you can save $3,600 by switch from cursor to github copilot. We recommend consolidating duplicate tools and trimming excess seats to maintain a lean, high-ROI AI stack.",
+      "createdAt": "2026-05-10T22:01:18.125Z",
+      "created_at": "2026-05-10T22:01:18.125Z"
+    },
+    "08b3db72-b287-4018-b235-9354293865b7": {
+      "id": "08b3db72-b287-4018-b235-9354293865b7",
+      "teamSize": 10,
+      "primaryUseCase": "coding",
+      "tools": [
+        {
+          "name": "Cursor",
+          "plan": "Business",
+          "seats": 10
+        }
+      ],
+      "totalSavingsMonthly": 300,
+      "totalSavingsYearly": 3600,
+      "recommendations": [
+        {
+          "tool": "Cursor",
+          "currentPlan": "Business ($40/seat)",
+          "recommendedPlan": "GitHub Copilot Pro ($10/seat)",
+          "recommendedAction": "Switch from Cursor to GitHub Copilot",
+          "savingsMonthly": 300,
+          "savingsAnnual": 3600,
+          "reason": "GitHub Copilot offers similar coding capabilities at a more competitive price point for your team.",
+          "type": "cross_vendor"
+        }
+      ],
+      "aiSummary": "We identified $3,600 in potential annual savings. The most significant opportunity is with Cursor, where you can save $3,600 by switch from cursor to github copilot. We recommend consolidating duplicate tools and trimming excess seats to maintain a lean, high-ROI AI stack.",
+      "createdAt": "2026-05-10T22:01:18.148Z",
+      "created_at": "2026-05-10T22:01:18.149Z"
+    },
+    "7dfec789-4b0b-416b-965b-9333f3c954d0": {
+      "id": "7dfec789-4b0b-416b-965b-9333f3c954d0",
+      "teamSize": 10,
+      "primaryUseCase": "coding",
+      "tools": [
+        {
+          "name": "Cursor",
+          "plan": "Business",
+          "seats": 10
+        }
+      ],
+      "totalSavingsMonthly": 300,
+      "totalSavingsYearly": 3600,
+      "recommendations": [
+        {
+          "tool": "Cursor",
+          "currentPlan": "Business ($40/seat)",
+          "recommendedPlan": "GitHub Copilot Pro ($10/seat)",
+          "recommendedAction": "Switch from Cursor to GitHub Copilot",
+          "savingsMonthly": 300,
+          "savingsAnnual": 3600,
+          "reason": "GitHub Copilot offers similar coding capabilities at a more competitive price point for your team.",
+          "type": "cross_vendor"
+        }
+      ],
+      "aiSummary": "We identified $3,600 in potential annual savings. The most significant opportunity is with Cursor, where you can save $3,600 by switch from cursor to github copilot. We recommend consolidating duplicate tools and trimming excess seats to maintain a lean, high-ROI AI stack.",
+      "createdAt": "2026-05-10T22:01:18.153Z",
+      "created_at": "2026-05-10T22:01:18.153Z"
+    },
+    "4c22078c-260e-4b0e-ad0d-975c4b8a51e7": {
+      "id": "4c22078c-260e-4b0e-ad0d-975c4b8a51e7",
+      "teamSize": 10,
+      "primaryUseCase": "coding",
+      "tools": [
+        {
+          "name": "Cursor",
+          "plan": "Business",
+          "seats": 10
+        }
+      ],
+      "totalSavingsMonthly": 300,
+      "totalSavingsYearly": 3600,
+      "recommendations": [
+        {
+          "tool": "Cursor",
+          "currentPlan": "Business ($40/seat)",
+          "recommendedPlan": "GitHub Copilot Pro ($10/seat)",
+          "recommendedAction": "Switch from Cursor to GitHub Copilot",
+          "savingsMonthly": 300,
+          "savingsAnnual": 3600,
+          "reason": "GitHub Copilot offers similar coding capabilities at a more competitive price point for your team.",
+          "type": "cross_vendor"
+        }
+      ],
+      "aiSummary": "We identified $3,600 in potential annual savings. The most significant opportunity is with Cursor, where you can save $3,600 by switch from cursor to github copilot. We recommend consolidating duplicate tools and trimming excess seats to maintain a lean, high-ROI AI stack.",
+      "createdAt": "2026-05-10T22:01:37.294Z",
+      "created_at": "2026-05-10T22:01:37.294Z"
+    },
+    "f8259290-4093-481b-8e30-e9014cb4f4ba": {
+      "id": "f8259290-4093-481b-8e30-e9014cb4f4ba",
+      "teamSize": 10,
+      "primaryUseCase": "coding",
+      "tools": [
+        {
+          "name": "Cursor",
+          "plan": "Business",
+          "seats": 10
+        }
+      ],
+      "totalSavingsMonthly": 300,
+      "totalSavingsYearly": 3600,
+      "recommendations": [
+        {
+          "tool": "Cursor",
+          "currentPlan": "Business ($40/seat)",
+          "recommendedPlan": "GitHub Copilot Pro ($10/seat)",
+          "recommendedAction": "Switch from Cursor to GitHub Copilot",
+          "savingsMonthly": 300,
+          "savingsAnnual": 3600,
+          "reason": "GitHub Copilot offers similar coding capabilities at a more competitive price point for your team.",
+          "type": "cross_vendor"
+        }
+      ],
+      "aiSummary": "We identified $3,600 in potential annual savings. The most significant opportunity is with Cursor, where you can save $3,600 by switch from cursor to github copilot. We recommend consolidating duplicate tools and trimming excess seats to maintain a lean, high-ROI AI stack.",
+      "createdAt": "2026-05-10T22:01:37.318Z",
+      "created_at": "2026-05-10T22:01:37.319Z"
+    },
+    "e9077b25-529e-425e-8cf5-758f9c8d5085": {
+      "id": "e9077b25-529e-425e-8cf5-758f9c8d5085",
+      "teamSize": 10,
+      "primaryUseCase": "coding",
+      "tools": [
+        {
+          "name": "Cursor",
+          "plan": "Business",
+          "seats": 10
+        }
+      ],
+      "totalSavingsMonthly": 300,
+      "totalSavingsYearly": 3600,
+      "recommendations": [
+        {
+          "tool": "Cursor",
+          "currentPlan": "Business ($40/seat)",
+          "recommendedPlan": "GitHub Copilot Pro ($10/seat)",
+          "recommendedAction": "Switch from Cursor to GitHub Copilot",
+          "savingsMonthly": 300,
+          "savingsAnnual": 3600,
+          "reason": "GitHub Copilot offers similar coding capabilities at a more competitive price point for your team.",
+          "type": "cross_vendor"
+        }
+      ],
+      "aiSummary": "We identified $3,600 in potential annual savings. The most significant opportunity is with Cursor, where you can save $3,600 by switch from cursor to github copilot. We recommend consolidating duplicate tools and trimming excess seats to maintain a lean, high-ROI AI stack.",
+      "createdAt": "2026-05-10T22:01:37.323Z",
+      "created_at": "2026-05-10T22:01:37.324Z"
+    },
+    "655bc128-bff5-46f3-a956-072717b74b6b": {
+      "id": "655bc128-bff5-46f3-a956-072717b74b6b",
+      "teamSize": 10,
+      "primaryUseCase": "coding",
+      "tools": [
+        {
+          "name": "Cursor",
+          "plan": "Business",
+          "seats": 10
+        }
+      ],
+      "totalSavingsMonthly": 300,
+      "totalSavingsYearly": 3600,
+      "recommendations": [
+        {
+          "tool": "Cursor",
+          "currentPlan": "Business ($40/seat)",
+          "recommendedPlan": "GitHub Copilot Pro ($10/seat)",
+          "recommendedAction": "Switch from Cursor to GitHub Copilot",
+          "savingsMonthly": 300,
+          "savingsAnnual": 3600,
+          "reason": "GitHub Copilot offers similar coding capabilities at a more competitive price point for your team.",
+          "type": "cross_vendor"
+        }
+      ],
+      "aiSummary": "We identified $3,600 in potential annual savings. The most significant opportunity is with Cursor, where you can save $3,600 by switch from cursor to github copilot. We recommend consolidating duplicate tools and trimming excess seats to maintain a lean, high-ROI AI stack.",
+      "createdAt": "2026-05-10T22:01:37.329Z",
+      "created_at": "2026-05-10T22:01:37.329Z"
+    },
+    "5cdc838f-e673-4979-a92c-bf96b77dd933": {
+      "id": "5cdc838f-e673-4979-a92c-bf96b77dd933",
+      "teamSize": 10,
+      "primaryUseCase": "coding",
+      "tools": [
+        {
+          "name": "Cursor",
+          "plan": "Business",
+          "seats": 10
+        }
+      ],
+      "totalSavingsMonthly": 300,
+      "totalSavingsYearly": 3600,
+      "recommendations": [
+        {
+          "tool": "Cursor",
+          "currentPlan": "Business ($40/seat)",
+          "recommendedPlan": "GitHub Copilot Pro ($10/seat)",
+          "recommendedAction": "Switch from Cursor to GitHub Copilot",
+          "savingsMonthly": 300,
+          "savingsAnnual": 3600,
+          "reason": "GitHub Copilot offers similar coding capabilities at a more competitive price point for your team.",
+          "type": "cross_vendor"
+        }
+      ],
+      "aiSummary": "We identified $3,600 in potential annual savings. The most significant opportunity is with Cursor, where you can save $3,600 by switch from cursor to github copilot. We recommend consolidating duplicate tools and trimming excess seats to maintain a lean, high-ROI AI stack.",
+      "createdAt": "2026-05-10T22:01:37.334Z",
+      "created_at": "2026-05-10T22:01:37.334Z"
+    },
+    "cb8084ca-be05-4f5e-81fa-283a125bfe4f": {
+      "id": "cb8084ca-be05-4f5e-81fa-283a125bfe4f",
+      "teamSize": 10,
+      "primaryUseCase": "coding",
+      "tools": [
+        {
+          "name": "Cursor",
+          "plan": "Business",
+          "seats": 10
+        }
+      ],
+      "totalSavingsMonthly": 300,
+      "totalSavingsYearly": 3600,
+      "recommendations": [
+        {
+          "tool": "Cursor",
+          "currentPlan": "Business ($40/seat)",
+          "recommendedPlan": "GitHub Copilot Pro ($10/seat)",
+          "recommendedAction": "Switch from Cursor to GitHub Copilot",
+          "savingsMonthly": 300,
+          "savingsAnnual": 3600,
+          "reason": "GitHub Copilot offers similar coding capabilities at a more competitive price point for your team.",
+          "type": "cross_vendor"
+        }
+      ],
+      "aiSummary": "We identified $3,600 in potential annual savings. The most significant opportunity is with Cursor, where you can save $3,600 by switch from cursor to github copilot. We recommend consolidating duplicate tools and trimming excess seats to maintain a lean, high-ROI AI stack.",
+      "createdAt": "2026-05-10T22:02:40.273Z",
+      "created_at": "2026-05-10T22:02:40.274Z"
+    },
+    "d678ac91-175a-43f0-991e-71fc254b73ea": {
+      "id": "d678ac91-175a-43f0-991e-71fc254b73ea",
+      "teamSize": 10,
+      "primaryUseCase": "coding",
+      "tools": [
+        {
+          "name": "Cursor",
+          "plan": "Business",
+          "seats": 10
+        }
+      ],
+      "totalSavingsMonthly": 300,
+      "totalSavingsYearly": 3600,
+      "recommendations": [
+        {
+          "tool": "Cursor",
+          "currentPlan": "Business ($40/seat)",
+          "recommendedPlan": "GitHub Copilot Pro ($10/seat)",
+          "recommendedAction": "Switch from Cursor to GitHub Copilot",
+          "savingsMonthly": 300,
+          "savingsAnnual": 3600,
+          "reason": "GitHub Copilot offers similar coding capabilities at a more competitive price point for your team.",
+          "type": "cross_vendor"
+        }
+      ],
+      "aiSummary": "We identified $3,600 in potential annual savings. The most significant opportunity is with Cursor, where you can save $3,600 by switch from cursor to github copilot. We recommend consolidating duplicate tools and trimming excess seats to maintain a lean, high-ROI AI stack.",
+      "createdAt": "2026-05-10T22:02:40.298Z",
+      "created_at": "2026-05-10T22:02:40.299Z"
+    },
+    "3b2495f4-3b92-4efd-b635-7dcb2c685677": {
+      "id": "3b2495f4-3b92-4efd-b635-7dcb2c685677",
+      "teamSize": 10,
+      "primaryUseCase": "coding",
+      "tools": [
+        {
+          "name": "Cursor",
+          "plan": "Business",
+          "seats": 10
+        }
+      ],
+      "totalSavingsMonthly": 300,
+      "totalSavingsYearly": 3600,
+      "recommendations": [
+        {
+          "tool": "Cursor",
+          "currentPlan": "Business ($40/seat)",
+          "recommendedPlan": "GitHub Copilot Pro ($10/seat)",
+          "recommendedAction": "Switch from Cursor to GitHub Copilot",
+          "savingsMonthly": 300,
+          "savingsAnnual": 3600,
+          "reason": "GitHub Copilot offers similar coding capabilities at a more competitive price point for your team.",
+          "type": "cross_vendor"
+        }
+      ],
+      "aiSummary": "We identified $3,600 in potential annual savings. The most significant opportunity is with Cursor, where you can save $3,600 by switch from cursor to github copilot. We recommend consolidating duplicate tools and trimming excess seats to maintain a lean, high-ROI AI stack.",
+      "createdAt": "2026-05-10T22:10:19.615Z",
+      "created_at": "2026-05-10T22:10:19.616Z"
+    },
+    "f9eeaf1b-ad8c-4554-a3f4-a449aeb9aa37": {
+      "id": "f9eeaf1b-ad8c-4554-a3f4-a449aeb9aa37",
+      "teamSize": 40,
+      "primaryUseCase": "coding",
+      "tools": [
+        {
+          "name": "Cursor",
+          "plan": "Pro",
+          "seats": 6
+        },
+        {
+          "name": "Claude",
+          "plan": "Pro",
+          "seats": 5
+        },
+        {
+          "name": "ChatGPT",
+          "plan": "Plus",
+          "seats": 3
+        },
+        {
+          "name": "GitHub Copilot",
+          "plan": "Business",
+          "seats": 4
+        }
+      ],
+      "totalSavingsMonthly": 372,
+      "totalSavingsYearly": 4464,
+      "recommendations": [
+        {
+          "tool": "Cursor",
+          "currentPlan": "Pro ($20/seat)",
+          "recommendedPlan": "GitHub Copilot Pro ($10/seat)",
+          "recommendedAction": "Switch from Cursor to GitHub Copilot",
+          "savingsMonthly": 60,
+          "savingsAnnual": 720,
+          "reason": "GitHub Copilot offers similar coding capabilities at a more competitive price point for your team.",
+          "type": "cross_vendor"
+        },
+        {
+          "tool": "Claude",
+          "currentPlan": "Pro",
+          "recommendedPlan": "Free",
+          "recommendedAction": "Downgrade to Free plan",
+          "savingsMonthly": 100,
+          "savingsAnnual": 1200,
+          "reason": "As a coding-focused team, the free tier of Claude is sufficient for occasional documentation.",
+          "type": "tier_downgrade"
+        },
+        {
+          "tool": "ChatGPT",
+          "currentPlan": "Plus",
+          "recommendedPlan": "Free",
+          "recommendedAction": "Downgrade to Free plan",
+          "savingsMonthly": 60,
+          "savingsAnnual": 720,
+          "reason": "As a coding-focused team, the free tier of ChatGPT is sufficient for occasional documentation.",
+          "type": "tier_downgrade"
+        },
+        {
+          "tool": "GitHub Copilot",
+          "currentPlan": "Business ($19/seat)",
+          "recommendedPlan": "Windsurf Pro ($15/seat)",
+          "recommendedAction": "Switch from GitHub Copilot to Windsurf",
+          "savingsMonthly": 16,
+          "savingsAnnual": 192,
+          "reason": "Windsurf offers similar coding capabilities at a more competitive price point for your team.",
+          "type": "cross_vendor"
+        },
+        {
+          "tool": "GitHub Copilot",
+          "currentPlan": "Business",
+          "recommendedPlan": "None (Cancel)",
+          "recommendedAction": "Consolidate GitHub Copilot into Cursor",
+          "savingsMonthly": 76,
+          "savingsAnnual": 912,
+          "reason": "You are paying for multiple coding tools. Cursor covers your needs.",
+          "type": "duplicate_tool"
+        },
+        {
+          "tool": "ChatGPT",
+          "currentPlan": "Plus",
+          "recommendedPlan": "None (Cancel)",
+          "recommendedAction": "Consolidate ChatGPT into Claude",
+          "savingsMonthly": 60,
+          "savingsAnnual": 720,
+          "reason": "You are paying for multiple writing tools. Claude covers your needs.",
+          "type": "duplicate_tool"
+        }
+      ],
+      "aiSummary": "We identified $4,464 in potential annual savings. The most significant opportunity is with Cursor, where you can save $720 by switch from cursor to github copilot. We recommend consolidating duplicate tools and trimming excess seats to maintain a lean, high-ROI AI stack.",
+      "createdAt": "2026-05-11T06:40:52.780Z",
+      "created_at": "2026-05-11T06:40:52.783Z"
+    },
+    "746e8b39-a586-4103-8640-1d6edfc60f58": {
+      "id": "746e8b39-a586-4103-8640-1d6edfc60f58",
+      "teamSize": 40,
+      "primaryUseCase": "coding",
+      "tools": [
+        {
+          "name": "Cursor",
+          "plan": "Hobby",
+          "seats": 1
+        },
+        {
+          "name": "GitHub Copilot",
+          "plan": "Individual",
+          "seats": 1
+        },
+        {
+          "name": "ChatGPT",
+          "plan": "Plus",
+          "seats": 1
+        },
+        {
+          "name": "Claude",
+          "plan": "Free",
+          "seats": 1
+        },
+        {
+          "name": "Gemini",
+          "plan": "Pro",
+          "seats": 1
+        },
+        {
+          "name": "Windsurf",
+          "plan": "Pro",
+          "seats": 1
+        },
+        {
+          "name": "v0",
+          "plan": "Pro",
+          "seats": 1
+        }
+      ],
+      "totalSavingsMonthly": 25,
+      "totalSavingsYearly": 300,
+      "recommendations": [
+        {
+          "tool": "ChatGPT",
+          "currentPlan": "Plus",
+          "recommendedPlan": "Free",
+          "recommendedAction": "Downgrade to Free plan",
+          "savingsMonthly": 20,
+          "savingsAnnual": 240,
+          "reason": "As a coding-focused team, the free tier of ChatGPT is sufficient for occasional documentation.",
+          "type": "tier_downgrade"
+        },
+        {
+          "tool": "Windsurf",
+          "currentPlan": "Pro ($15/seat)",
+          "recommendedPlan": "GitHub Copilot Pro ($10/seat)",
+          "recommendedAction": "Switch from Windsurf to GitHub Copilot",
+          "savingsMonthly": 5,
+          "savingsAnnual": 60,
+          "reason": "GitHub Copilot offers similar coding capabilities at a more competitive price point for your team.",
+          "type": "cross_vendor"
+        }
+      ],
+      "aiSummary": "Your AI stack is already highly optimized. Our analysis shows your current configuration is lean and well-aligned with your team size and use cases. We found less than $100 in monthly savings, which suggests a high-efficiency operation. No major changes recommended.",
+      "createdAt": "2026-05-11T10:17:14.463Z",
+      "created_at": "2026-05-11T10:17:14.478Z"
+    },
+    "643b281e-8733-4e8e-9e8f-f633269554d7": {
+      "id": "643b281e-8733-4e8e-9e8f-f633269554d7",
+      "teamSize": 50,
+      "primaryUseCase": "mixed",
+      "tools": [
+        {
+          "name": "ChatGPT",
+          "plan": "Enterprise",
+          "seats": 50
+        },
+        {
+          "name": "Claude",
+          "plan": "Enterprise",
+          "seats": 50
+        },
+        {
+          "name": "Cursor",
+          "plan": "Business",
+          "seats": 50
+        }
+      ],
+      "totalSavingsMonthly": 1500,
+      "totalSavingsYearly": 18000,
+      "recommendations": [
+        {
+          "tool": "Cursor",
+          "currentPlan": "Business ($40/seat)",
+          "recommendedPlan": "GitHub Copilot Pro ($10/seat)",
+          "recommendedAction": "Switch from Cursor to GitHub Copilot",
+          "savingsMonthly": 1500,
+          "savingsAnnual": 18000,
+          "reason": "GitHub Copilot offers similar coding capabilities at a more competitive price point for your team.",
+          "type": "cross_vendor"
+        }
+      ],
+      "globalInsight": {
+        "title": "High-Impact Savings Identified",
+        "description": "Your stack has significant optimization potential. Implementing these changes will save over $18,000 annually.",
+        "savingsYearly": 18000
+      },
+      "aiSummary": "We identified $18,000 in potential annual savings. The most significant opportunity is with Cursor, where you can save $18,000 by switch from cursor to github copilot. We recommend consolidating duplicate tools and trimming excess seats to maintain a lean, high-ROI AI stack.",
+      "createdAt": "2026-05-11T17:45:34.073Z",
+      "created_at": "2026-05-11T17:45:34.128Z"
+    },
+    "d2db70a6-371c-4867-88b5-0ba46c7f649d": {
+      "id": "d2db70a6-371c-4867-88b5-0ba46c7f649d",
+      "teamSize": 50,
+      "primaryUseCase": "mixed",
+      "tools": [
+        {
+          "name": "ChatGPT",
+          "plan": "Enterprise",
+          "seats": 50
+        },
+        {
+          "name": "Claude",
+          "plan": "Enterprise",
+          "seats": 50
+        },
+        {
+          "name": "Cursor",
+          "plan": "Business",
+          "seats": 50
+        }
+      ],
+      "totalSavingsMonthly": 1500,
+      "totalSavingsYearly": 18000,
+      "recommendations": [
+        {
+          "tool": "Cursor",
+          "currentPlan": "Business ($40/seat)",
+          "recommendedPlan": "GitHub Copilot Pro ($10/seat)",
+          "recommendedAction": "Switch from Cursor to GitHub Copilot",
+          "savingsMonthly": 1500,
+          "savingsAnnual": 18000,
+          "reason": "GitHub Copilot offers similar coding capabilities at a more competitive price point for your team.",
+          "type": "cross_vendor"
+        }
+      ],
+      "globalInsight": {
+        "title": "High-Impact Savings Identified",
+        "description": "Your stack has significant optimization potential. Implementing these changes will save over $18,000 annually.",
+        "savingsYearly": 18000
+      },
+      "aiSummary": "We identified $18,000 in potential annual savings. The most significant opportunity is with Cursor, where you can save $18,000 by switch from cursor to github copilot. We recommend consolidating duplicate tools and trimming excess seats to maintain a lean, high-ROI AI stack.",
+      "createdAt": "2026-05-11T17:47:47.377Z",
+      "created_at": "2026-05-11T17:47:47.409Z"
+    },
+    "b502b8e8-8ef6-474b-8cb7-1175eaf8f907": {
+      "id": "b502b8e8-8ef6-474b-8cb7-1175eaf8f907",
+      "teamSize": 28,
+      "primaryUseCase": "coding",
+      "tools": [
+        {
+          "name": "Cursor",
+          "plan": "Pro",
+          "seats": 24
+        },
+        {
+          "name": "GitHub Copilot",
+          "plan": "Business",
+          "seats": 13
+        }
+      ],
+      "totalSavingsMonthly": 539,
+      "totalSavingsYearly": 6468,
+      "recommendations": [
+        {
+          "tool": "Cursor",
+          "currentPlan": "Pro ($20/seat)",
+          "recommendedPlan": "GitHub Copilot Pro ($10/seat)",
+          "recommendedAction": "Switch from Cursor to GitHub Copilot",
+          "savingsMonthly": 240,
+          "savingsAnnual": 2880,
+          "reason": "GitHub Copilot offers similar coding capabilities at a more competitive price point for your team.",
+          "type": "cross_vendor"
+        },
+        {
+          "tool": "GitHub Copilot",
+          "currentPlan": "Business ($19/seat)",
+          "recommendedPlan": "Windsurf Pro ($15/seat)",
+          "recommendedAction": "Switch from GitHub Copilot to Windsurf",
+          "savingsMonthly": 52,
+          "savingsAnnual": 624,
+          "reason": "Windsurf offers similar coding capabilities at a more competitive price point for your team.",
+          "type": "cross_vendor"
+        },
+        {
+          "tool": "GitHub Copilot",
+          "currentPlan": "Business",
+          "recommendedPlan": "None (Cancel)",
+          "recommendedAction": "Consolidate GitHub Copilot into Cursor",
+          "savingsMonthly": 247,
+          "savingsAnnual": 2964,
+          "reason": "You are paying for multiple coding tools. Cursor covers your needs.",
+          "type": "duplicate_tool"
+        }
+      ],
+      "globalInsight": {
+        "title": "High-Impact Savings Identified",
+        "description": "Your stack has significant optimization potential. Implementing these changes will save over $6,468 annually.",
+        "savingsYearly": 6468
+      },
+      "aiSummary": "We identified $6,468 in potential annual savings. The most significant opportunity is with Cursor, where you can save $2,880 by switch from cursor to github copilot. We recommend consolidating duplicate tools and trimming excess seats to maintain a lean, high-ROI AI stack.",
+      "createdAt": "2026-05-11T18:10:07.826Z",
+      "created_at": "2026-05-11T18:10:07.844Z"
     }
   },
   "leads": {
@@ -395,6 +1488,61 @@
       "auditId": "59f5f395-d036-42d0-af3b-ff0eb702b160",
       "audit_id": "59f5f395-d036-42d0-af3b-ff0eb702b160",
       "created_at": "2026-05-10T20:07:53.344Z"
+    },
+    "4f44e63c-f327-4df0-91d0-3e5dac4f1280": {
+      "id": "4f44e63c-f327-4df0-91d0-3e5dac4f1280",
+      "email": "test_refactor@example.com",
+      "auditId": "7159c7c8-178c-446c-8bcc-a2dafe20c3d0",
+      "audit_id": "7159c7c8-178c-446c-8bcc-a2dafe20c3d0",
+      "created_at": "2026-05-10T21:08:54.324Z"
+    },
+    "20d8b791-1e9f-4317-a525-27e6b6f0f04f": {
+      "id": "20d8b791-1e9f-4317-a525-27e6b6f0f04f",
+      "email": "test_logging@example.com",
+      "auditId": "369a24b9-f0a2-4104-ab88-387258b6233c",
+      "audit_id": "369a24b9-f0a2-4104-ab88-387258b6233c",
+      "created_at": "2026-05-10T21:25:06.802Z"
+    },
+    "f83cc335-7c17-47bb-a530-977c716d1021": {
+      "id": "f83cc335-7c17-47bb-a530-977c716d1021",
+      "email": "test_logging_2@example.com",
+      "auditId": "369a24b9-f0a2-4104-ab88-387258b6233c",
+      "audit_id": "369a24b9-f0a2-4104-ab88-387258b6233c",
+      "created_at": "2026-05-10T21:27:00.614Z"
+    },
+    "eedf7855-43b2-47c1-a48f-87f770515083": {
+      "id": "eedf7855-43b2-47c1-a48f-87f770515083",
+      "email": "verification@audmint.com",
+      "auditId": "353622e0-4f83-42f1-9967-bfd8dc31fbb2",
+      "audit_id": "353622e0-4f83-42f1-9967-bfd8dc31fbb2",
+      "created_at": "2026-05-10T21:47:29.716Z"
+    },
+    "3e4b2d84-d470-4435-b816-4ad70cb8f972": {
+      "id": "3e4b2d84-d470-4435-b816-4ad70cb8f972",
+      "email": "analytics@audmint.com",
+      "auditId": "3b2495f4-3b92-4efd-b635-7dcb2c685677",
+      "audit_id": "3b2495f4-3b92-4efd-b635-7dcb2c685677",
+      "created_at": "2026-05-10T22:10:19.644Z"
+    },
+    "32f3eadf-0d28-4dea-86df-dab573b7a224": {
+      "id": "32f3eadf-0d28-4dea-86df-dab573b7a224",
+      "email": "test@example.com",
+      "company": "",
+      "role": "",
+      "teamSize": 50,
+      "auditId": "d2db70a6-371c-4867-88b5-0ba46c7f649d",
+      "audit_id": "d2db70a6-371c-4867-88b5-0ba46c7f649d",
+      "created_at": "2026-05-11T17:48:25.105Z"
+    },
+    "597048f6-9541-4532-8f0d-9052b418e41a": {
+      "id": "597048f6-9541-4532-8f0d-9052b418e41a",
+      "email": "ankityadav18193@gmail.com",
+      "company": "",
+      "role": "",
+      "teamSize": 28,
+      "auditId": "b502b8e8-8ef6-474b-8cb7-1175eaf8f907",
+      "audit_id": "b502b8e8-8ef6-474b-8cb7-1175eaf8f907",
+      "created_at": "2026-05-11T18:10:44.830Z"
     }
   },
   "subscriptions": {
@@ -402,6 +1550,11 @@
       "id": "8a65603b-7fc0-4131-8eb9-dbb3c5834968",
       "email": "sub_test_123@example.com",
       "created_at": "2026-05-10T20:21:40.481Z"
+    },
+    "87dc60dd-30c3-40a7-8a12-c9970136b992": {
+      "id": "87dc60dd-30c3-40a7-8a12-c9970136b992",
+      "email": "service_sub_test@example.com",
+      "created_at": "2026-05-10T21:11:58.287Z"
     }
   }
 }

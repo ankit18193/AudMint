@@ -1,4 +1,5 @@
 import { PRICING_DATA, ToolName, PlanName } from './pricing';
+import { randomUUID } from 'crypto';
 
 export interface UserInputTool {
   name: ToolName;
@@ -20,7 +21,7 @@ export interface Recommendation {
   savingsMonthly: number;
   savingsAnnual: number;
   reason: string;
-  type: 'seat_optimization' | 'tier_downgrade' | 'duplicate_tool' | 'cross_vendor';
+  type: 'seat_optimization' | 'tier_downgrade' | 'duplicate_tool' | 'cross_vendor' | 'credex_optimization';
 }
 
 export interface GlobalInsight {
@@ -32,25 +33,29 @@ export interface GlobalInsight {
 export interface AuditResult {
   totalSavingsMonthly: number;
   totalSavingsYearly: number;
+  spendPerMember: number;
   recommendations: Recommendation[];
   globalInsight?: GlobalInsight;
-  aiSummary: string;
 }
 
 export function runAudit(input: AuditInput): Omit<AuditResult, 'aiSummary'> {
   const recommendations: Recommendation[] = [];
   let totalSavingsMonthly = 0;
+  let totalCurrentSpend = 0;
 
   const toolCategories = new Map<string, UserInputTool[]>();
 
-  // 1 & 2. Seat and Plan Optimization
+  // 1 & 2. Seat, Plan, and Credex Optimization
   for (const userTool of input.tools) {
     const pricing = PRICING_DATA.find(p => p.name === userTool.name && p.plan === userTool.plan);
     if (!pricing) continue;
 
+    const currentToolCost = pricing.costPerSeat * userTool.seats;
+    totalCurrentSpend += currentToolCost;
+
     let currentToolSeats = userTool.seats;
 
-    // Seat Optimization
+    // A. Seat Optimization
     if (currentToolSeats > input.teamSize) {
       const overProvisionedSeats = currentToolSeats - input.teamSize;
       const savings = overProvisionedSeats * pricing.costPerSeat;
@@ -71,19 +76,38 @@ export function runAudit(input: AuditInput): Omit<AuditResult, 'aiSummary'> {
       currentToolSeats = input.teamSize;
     }
 
-    // Plan Downgrade
+    // B. Credex Optimization (Credits for supported tools)
+    // We recommend Credex for high-spend team/enterprise plans
+    if (pricing.credexEligible && (pricing.isTeamPlan || pricing.costPerSeat >= 30)) {
+      const estimatedDiscount = 0.25; // 25% average savings via Credex
+      const savings = currentToolCost * estimatedDiscount;
+
+      recommendations.push({
+        tool: userTool.name,
+        currentPlan: `Retail Pricing`,
+        recommendedPlan: `Credex Credits`,
+        recommendedAction: `Switch to Credex-sourced infrastructure credits`,
+        savingsMonthly: savings,
+        savingsAnnual: savings * 12,
+        reason: `Credex provides discounted credits for ${userTool.name} that can reduce your direct retail spend by approximately 25%.`,
+        type: 'credex_optimization'
+      });
+      totalSavingsMonthly += savings;
+    }
+
+    // C. Plan Downgrade
     if (pricing.costPerSeat > 0) {
       let targetPlan: string | null = null;
       let downgradeReason = "";
 
       if (pricing.category === 'writing' && input.primaryUseCase === 'coding') {
         targetPlan = "Free";
-        downgradeReason = `As a coding-focused team, the free tier of ${userTool.name} is sufficient for occasional documentation.`;
+        downgradeReason = `As a coding-focused team, the free tier of ${userTool.name} is sufficient for occasional documentation needs.`;
       } else if (pricing.isTeamPlan && input.teamSize <= 2) {
         const proPlan = PRICING_DATA.find(p => p.name === userTool.name && !p.isTeamPlan && p.costPerSeat > 0);
         if (proPlan && proPlan.costPerSeat < pricing.costPerSeat) {
           targetPlan = proPlan.plan;
-          downgradeReason = `Team-tier features are rarely utilized for small teams of ${input.teamSize}. Pro tier offers better ROI.`;
+          downgradeReason = `Team features are often redundant for small teams of ${input.teamSize}. The ${proPlan.plan} tier offers full functionality at a lower price.`;
         }
       }
 
@@ -108,26 +132,20 @@ export function runAudit(input: AuditInput): Omit<AuditResult, 'aiSummary'> {
       }
     }
 
-    // 3. Cross-Vendor Optimization (Switching tools)
-    // We only suggest switching between "Pro" or "Business" plans to maintain parity.
-    // If user is on a paid plan, we suggest the cheapest alternative PAID plan in the same category.
+    // D. Cross-Vendor Optimization (Switching tools)
     if (pricing.costPerSeat > 0) {
       const categoryAlternatives = PRICING_DATA.filter(p => 
         p.category === pricing.category && 
         p.name !== userTool.name && 
-        p.costPerSeat > 0 && // Must be a paid alternative
-        p.costPerSeat < pricing.costPerSeat // Must be cheaper
+        p.costPerSeat > 0 && 
+        p.costPerSeat < pricing.costPerSeat 
       ).sort((a, b) => a.costPerSeat - b.costPerSeat);
 
       if (categoryAlternatives.length > 0) {
         const cheapestAlt = categoryAlternatives[0];
-        
-        // Suggest if savings are meaningful (> 25% cheaper)
-        if (pricing.costPerSeat > cheapestAlt.costPerSeat * 1.25) {
+        if (pricing.costPerSeat > cheapestAlt.costPerSeat * 1.3) {
           const savings = (pricing.costPerSeat - cheapestAlt.costPerSeat) * currentToolSeats;
-          
-          // Check if we already recommended something better
-          const existingRec = recommendations.find(r => r.tool === userTool.name);
+          const existingRec = recommendations.find(r => r.tool === userTool.name && r.type !== 'credex_optimization');
           
           if (savings > 0 && (!existingRec || existingRec.savingsMonthly < savings)) {
             recommendations.push({
@@ -137,7 +155,7 @@ export function runAudit(input: AuditInput): Omit<AuditResult, 'aiSummary'> {
               recommendedAction: `Switch from ${userTool.name} to ${cheapestAlt.name}`,
               savingsMonthly: savings,
               savingsAnnual: savings * 12,
-              reason: `${cheapestAlt.name} offers similar ${pricing.category} capabilities at a more competitive price point for your team.`,
+              reason: `${cheapestAlt.name} provides comparable ${pricing.category} capabilities at a significantly lower cost for your team size.`,
               type: 'cross_vendor'
             });
             totalSavingsMonthly += savings;
@@ -153,8 +171,10 @@ export function runAudit(input: AuditInput): Omit<AuditResult, 'aiSummary'> {
     toolCategories.get(pricing.category)!.push({ ...userTool, seats: currentToolSeats });
   }
 
-  // 4. Duplicate Tool Detection (Handles cross-vendor overlap)
+  // 3. Duplicate Tool Detection
   toolCategories.forEach((toolsInCategory, category) => {
+    if (category === 'api') return; // Don't flag multiple APIs as duplicates necessarily
+
     if (toolsInCategory.length > 1) {
       const sortedTools = toolsInCategory
         .map(t => ({
@@ -165,8 +185,8 @@ export function runAudit(input: AuditInput): Omit<AuditResult, 'aiSummary'> {
         .sort((a, b) => b.pricing.costPerSeat - a.pricing.costPerSeat);
 
       if (sortedTools.length > 1) {
-        const keep = sortedTools[0];
-        for (let i = 1; i < sortedTools.length; i++) {
+        const keep = sortedTools[sortedTools.length - 1]; // Keep the cheapest one
+        for (let i = 0; i < sortedTools.length - 1; i++) {
           const drop = sortedTools[i];
           const savings = drop.pricing.costPerSeat * drop.tool.seats;
 
@@ -177,7 +197,7 @@ export function runAudit(input: AuditInput): Omit<AuditResult, 'aiSummary'> {
             recommendedAction: `Consolidate ${drop.tool.name} into ${keep.tool.name}`,
             savingsMonthly: savings,
             savingsAnnual: savings * 12,
-            reason: `You are paying for multiple ${category} tools. ${keep.tool.name} covers your needs.`,
+            reason: `Your team uses both ${drop.tool.name} and ${keep.tool.name} for ${category}. Consolidating to ${keep.tool.name} eliminates redundancy.`,
             type: 'duplicate_tool'
           });
           totalSavingsMonthly += savings;
@@ -186,12 +206,12 @@ export function runAudit(input: AuditInput): Omit<AuditResult, 'aiSummary'> {
     }
   });
 
-  // 5. Global Insight & Impact Marking
+  // 4. Global Insight
   let globalInsight: GlobalInsight | undefined;
   if (totalSavingsMonthly > 500) {
     globalInsight = {
       title: "High-Impact Savings Identified",
-      description: `Your stack has significant optimization potential. Implementing these changes will save over $${(totalSavingsMonthly * 12).toLocaleString()} annually.`,
+      description: `We've identified over $${(totalSavingsMonthly * 12).toLocaleString()} in annual waste. Most of this comes from ${recommendations.some(r => r.type === 'credex_optimization') ? 'retail pricing markups' : 'tool redundancy'}.`,
       savingsYearly: totalSavingsMonthly * 12
     };
   }
@@ -199,6 +219,7 @@ export function runAudit(input: AuditInput): Omit<AuditResult, 'aiSummary'> {
   return {
     totalSavingsMonthly: Math.round(totalSavingsMonthly),
     totalSavingsYearly: Math.round(totalSavingsMonthly * 12),
+    spendPerMember: Math.round(totalCurrentSpend / input.teamSize),
     recommendations,
     globalInsight
   };

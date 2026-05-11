@@ -1,61 +1,36 @@
 import { Router } from 'express';
-import { z } from 'zod';
-import { randomUUID } from 'crypto';
-import { runAudit, AuditInput } from '../engine/rules';
-import { generateExecutiveSummary } from '../services/ai';
-import { persistence } from '../db';
+import { auditSchema } from '../validation/audit.schema';
+import { auditService } from '../services/auditService';
+import { logger } from '../utils/logger';
+import { strictLimiter } from '../middleware/rateLimit';
 
 const router = Router();
 
-// Strict Audit Validation
-const AuditSchema = z.object({
-  teamSize: z.number().int().min(1, "Team size must be at least 1").max(10000, "Team size is too large"),
-  primaryUseCase: z.enum(['coding', 'writing', 'data', 'research', 'mixed']),
-  tools: z.array(z.object({
-    name: z.string().min(1, "Tool name is required"),
-    plan: z.string().min(1, "Plan name is required"),
-    seats: z.number().int().min(0, "Seats cannot be negative").default(1),
-  })).min(1, "At least one tool must be provided"),
-});
-
-router.post('/', async (req, res) => {
+router.post('/', strictLimiter, async (req, res) => {
+  logger.logInfo('Audit request received');
   try {
-    const validatedData = AuditSchema.parse(req.body);
-    const input: AuditInput = validatedData as any;
+    const parsed = auditSchema.safeParse(req.body);
 
-    // 1. Run deterministic rule-based engine
-    const engineOutput = runAudit(input);
+    if (!parsed.success) {
+      logger.logWarn('Audit validation failed');
+      return res.status(400).json({
+        success: false,
+        message: "Invalid input",
+      });
+    }
 
-    // 2. Generate AI summary with mandatory fallback
-    const aiSummary = await generateExecutiveSummary(input, engineOutput);
-
-    // 3. Construct full result
-    const auditResult = {
-      ...engineOutput,
-      aiSummary
-    };
-
-    // 4. Save to DB
-    const id = randomUUID();
-    const fullRecord = {
-      id,
-      ...input,
-      ...auditResult,
-      createdAt: new Date()
-    };
+    // Use only parsed data
+    const validatedData = parsed.data;
     
-    await persistence.saveAudit(fullRecord);
+    // Call service layer
+    const fullRecord = await auditService.runAudit(validatedData as any);
+
+    logger.logInfo('Audit completed successfully', { auditId: fullRecord.id });
 
     // Return consistent output format
     res.json(fullRecord);
-  } catch (error) {
-    if (error instanceof z.ZodError) {
-      return res.status(400).json({ 
-        success: false, 
-        message: error.issues[0].message 
-      });
-    }
-    console.error('Audit API Error:', error);
+  } catch (error: any) {
+    logger.logError('Audit API Error', { message: error.message });
     res.status(500).json({ success: false, message: 'Internal server error' });
   }
 });

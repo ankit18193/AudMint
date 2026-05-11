@@ -38,7 +38,7 @@ describe('AudMint Engine Logic', () => {
     expect(duplicateRec).toBeDefined();
   });
 
-  test('Cross-Vendor: Suggest switching from Jasper ($39) to Gemini AI Pro ($19.99)', () => {
+  test('Cross-Vendor: Suggest switching from Jasper ($39) to Gemini Pro ($19.99)', () => {
     const input: AuditInput = {
       teamSize: 10,
       primaryUseCase: 'writing',
@@ -47,10 +47,10 @@ describe('AudMint Engine Logic', () => {
     const res = runAudit(input);
     const crossRec = res.recommendations.find(r => r.type === 'cross_vendor');
     expect(crossRec).toBeDefined();
-    expect(crossRec?.recommendedPlan).toContain('Gemini AI Pro');
+    expect(crossRec?.recommendedPlan).toContain('Gemini Pro');
   });
 
-  test('Cross-Vendor: Suggest switching from Cursor Business ($40) to GitHub Copilot Pro ($10)', () => {
+  test('Cross-Vendor: Suggest switching from Cursor Business ($40) to GitHub Copilot Individual ($10)', () => {
     const input: AuditInput = {
       teamSize: 10,
       primaryUseCase: 'coding',
@@ -59,18 +59,28 @@ describe('AudMint Engine Logic', () => {
     const res = runAudit(input);
     const crossRec = res.recommendations.find(r => r.type === 'cross_vendor');
     expect(crossRec).toBeDefined();
-    expect(crossRec?.recommendedPlan).toContain('GitHub Copilot Pro');
+    expect(crossRec?.recommendedPlan).toContain('GitHub Copilot Individual');
+  });
+
+  test('Credex Optimization: Surface Credex for enterprise tiers', () => {
+    const input: AuditInput = {
+      teamSize: 50,
+      primaryUseCase: 'writing',
+      tools: [{ name: 'ChatGPT', plan: 'Enterprise', seats: 50 }]
+    };
+    const res = runAudit(input);
+    const credexRec = res.recommendations.find(r => r.type === 'credex_optimization');
+    expect(credexRec).toBeDefined();
+    expect(res.spendPerMember).toBe(50); // $50 per seat
   });
 
   test('Optimized Scenario: No recommendations for lean stack', () => {
     const input: AuditInput = {
       teamSize: 10,
       primaryUseCase: 'coding',
-      tools: [{ name: 'GitHub Copilot', plan: 'Pro', seats: 10 }]
+      tools: [{ name: 'GitHub Copilot', plan: 'Individual', seats: 10 }]
     };
     const res = runAudit(input);
-    // GitHub Copilot Pro ($10) is the cheapest paid coding tool.
-    // Cursor Hobby ($0) is free, but we don't suggest cross-vendor for free tools to maintain parity.
     expect(res.recommendations.filter(r => r.type === 'cross_vendor').length).toBe(0);
   });
 });

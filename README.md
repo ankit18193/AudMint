@@ -30,9 +30,18 @@ AudMint is a lead-generation and decision-engine SaaS product for startups and e
 Frontend: https://audmint-frontend.vercel.app (Pending deployment)
 Backend: https://audmint-api.onrender.com (Pending deployment)
 
+## Key Features
+- **Multi-Step Audit Flow**: Intuitive tool selection and usage configuration.
+- **Defensible Audit Engine**: Rule-based logic covering seat optimization, tier downgrades, and tool consolidation.
+- **Credex Integration**: Automatically identifies high-spend tools eligible for Credex infrastructure credits.
+- **Industry Benchmarking**: Compares your AI spend per member against industry averages ($150/dev).
+- **AI Executive Summary**: Uses Anthropic/Claude to provide a personalized, business-focused summary of savings.
+- **Viral Loop**: Dynamic OG images and shareable public reports for results.
+
 ## 5 Trade-offs
-1. **Rule-Based Engine vs. LLM for Savings Calculations**: Opted for deterministic rule-based logic for cost calculations rather than using an LLM to ensure mathematically consistent and verifiable results. LLMs are only used for the executive summary.
-2. **Local Storage over User Accounts**: Removed authentication and used localStorage to store form state to minimize friction and maximize lead capture conversion rates.
-3. **Monolith vs. Microservices Backend**: Built a simple Express API backend instead of microservices to decrease time-to-market and simplify deployment, adequate for the expected load and lead gen nature.
-4. **Immediate Value vs. Gated Results**: The audit results are shown *before* capturing the lead to build trust, although it sacrifices some initial captures, the leads collected are of significantly higher intent.
-5. **PostgreSQL vs NoSQL**: Chose a relational database (PostgreSQL via Supabase) over NoSQL because audit data and reports naturally have structured, relational characteristics, aiding analytical queries down the line.
+1. **Rule-Based Engine vs. LLM for Math**: Used deterministic logic for cost calculations to ensure 100% accuracy and defensibility, reserving LLMs for qualitative summarization.
+2. **Benchmark-First Logic**: Prioritized "Spend Per Member" as a primary metric because it provides the social context necessary for a Finance/VPE decision-maker to act.
+3. **Local Storage Persistence**: Opted for zero-auth localStorage over database-backed sessions to minimize friction and maximize conversion for the lead capture gate.
+4. **Tool Parity in Cross-Vendor Suggestions**: Only suggest switching to alternative tools if they maintain similar "Pro/Business" tier capabilities, avoiding "false savings" from under-powered free tiers.
+5. **PostgreSQL vs NoSQL**: Chose SQL for its ability to handle complex relational reporting and future analytical dashboards for Credex's internal lead-scoring.
+

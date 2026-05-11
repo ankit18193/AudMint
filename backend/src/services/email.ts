@@ -1,4 +1,6 @@
 import nodemailer from 'nodemailer';
+import { logger } from '../utils/logger';
+import { config } from '../config/env';
 
 export interface EmailData {
   totalSavingsYearly: number;
@@ -9,16 +11,16 @@ export async function sendAuditEmail(email: string, auditData: EmailData, report
   try {
     // Determine transport method
     const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST || 'smtp.resend.com',
-      port: parseInt(process.env.SMTP_PORT || '465'),
-      secure: process.env.SMTP_SECURE !== 'false', // Default to true
+      host: config.email.smtpHost,
+      port: config.email.smtpPort,
+      secure: config.email.smtpSecure,
       auth: {
-        user: process.env.SMTP_USER || 'resend',
-        pass: process.env.SMTP_PASS || process.env.EMAIL_API_KEY, // Use EMAIL_API_KEY as fallback for SMTP pass (common in Resend)
+        user: config.email.smtpUser,
+        pass: config.email.smtpPass,
       },
     });
 
-    const from = process.env.EMAIL_FROM || '"AudMint" <no-reply@credex.ai>';
+    const from = config.email.from;
 
     await transporter.sendMail({
       from,
@@ -48,9 +50,9 @@ export async function sendAuditEmail(email: string, auditData: EmailData, report
       `,
     });
 
-    console.log(`✅ Audit email successfully sent to ${email}`);
+    logger.logInfo('Audit email sent successfully', { email });
   } catch (error: any) {
-    console.error('❌ Failed to send audit email:', error.message);
-    // Silent fail in production, but log error
+    logger.logError('Failed to send audit email', { email, error: error.message });
+    // Silent fail in production
   }
 }

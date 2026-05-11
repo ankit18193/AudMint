@@ -1,5 +1,6 @@
 import Anthropic from '@anthropic-ai/sdk';
 import { AuditResult, AuditInput } from '../engine/rules';
+import { config } from '../config/env';
 
 export async function generateExecutiveSummary(userData: AuditInput, auditResults: Omit<AuditResult, 'aiSummary'>): Promise<string> {
   const totalMonthly = auditResults.totalSavingsMonthly;
@@ -42,13 +43,13 @@ Output Requirements:
 `;
 
   try {
-    if (!process.env.ANTHROPIC_API_KEY || process.env.ANTHROPIC_API_KEY.includes('your_')) {
+    if (!config.anthropicApiKey || config.anthropicApiKey.includes('your_')) {
       console.warn("AI Key missing, using fallback summary.");
       return fallbackSummary;
     }
 
     const anthropic = new Anthropic({
-      apiKey: process.env.ANTHROPIC_API_KEY,
+      apiKey: config.anthropicApiKey,
     });
 
     const response = await anthropic.messages.create({

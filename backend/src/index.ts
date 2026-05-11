@@ -1,27 +1,18 @@
 import express from 'express';
 import cors from 'cors';
-import dotenv from 'dotenv';
-import rateLimit from 'express-rate-limit';
 import auditRouter from './api/audit';
 import leadRouter from './api/lead';
 import reportRouter from './api/report';
 import subscribeRouter from './api/subscribe';
-
-dotenv.config();
+import { logger } from './utils/logger';
+import { config } from './config/env';
 
 const app = express();
+logger.logInfo('AudMint Backend starting up...');
 
 // Basic security and parsing
 app.use(cors());
 app.use(express.json());
-
-// Rate limiting: 100 requests per 15 minutes per IP
-const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000,
-  max: 100,
-  message: { success: false, message: "Too many requests, please try again later." }
-});
-app.use(limiter);
 
 // Routes
 app.use('/api/audit', auditRouter);
@@ -35,9 +26,9 @@ app.use((err: any, req: express.Request, res: express.Response, next: express.Ne
   res.status(500).json({ success: false, message: "Something went wrong!" });
 });
 
-const PORT = process.env.PORT || 3001;
+const PORT = config.port;
 app.listen(PORT, () => {
-  console.log(`AudMint Backend running on port ${PORT}`);
+  logger.logInfo(`AudMint Backend running on port ${PORT}`);
 });
 
 // Keep process alive if database connection is slow or failing

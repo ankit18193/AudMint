@@ -1,68 +1,49 @@
 import { Router } from 'express';
-import { z } from 'zod';
-import { randomUUID } from 'crypto';
-import { persistence } from '../db';
-import { sendAuditEmail } from '../services/email';
+import { leadSchema } from '../validation/lead.schema';
+import { leadService } from '../services/leadService';
+import { logger } from '../utils/logger';
+import { strictLimiter } from '../middleware/rateLimit';
 
 const router = Router();
 
-// Strict Lead Validation
-const LeadSchema = z.object({
-  email: z.string().email("Invalid email format"),
-  auditId: z.string().min(1, "Audit ID is required"),
-  company: z.string().optional(),
-  role: z.string().optional(),
-  teamSize: z.number().int().min(1).optional(),
-  company_website: z.string().optional(),
-});
-
-router.post('/', async (req, res) => {
+router.post('/', strictLimiter, async (req, res) => {
+  logger.logInfo('Lead submission received');
   try {
     // Honeypot check: If the field is present and not empty, it's likely a bot
     if (req.body.company_website && req.body.company_website.length > 0) {
-      console.warn('Bot detected via honeypot:', req.body.email);
+      logger.logWarn('Bot detected via honeypot', { email: req.body.email });
       // Return generic success to avoid tipping off the bot
       return res.json({ success: true, message: 'Success! Your report has been dispatched to your inbox.' });
     }
 
-    const validatedData = LeadSchema.parse(req.body);
-    const { email, company, role, teamSize, auditId } = validatedData;
+    const parsed = leadSchema.safeParse(req.body);
 
-    // 1. Check for existing audit
-    const auditData = await persistence.getAudit(auditId);
-    if (!auditData) {
-      return res.status(404).json({ success: false, message: 'Reference audit not found' });
+    if (!parsed.success) {
+      logger.logWarn('Lead validation failed');
+      return res.status(400).json({
+        success: false,
+        message: "Invalid input",
+      });
     }
 
-    // 2. Prevent duplicate submissions (Same email for same audit)
-    const hasLead = await persistence.findLead(email, auditId);
-    if (hasLead) {
-      return res.status(400).json({ success: false, message: 'Report already requested for this email' });
-    }
+    // Call service layer
+    await leadService.createLead(parsed.data);
 
-    // 3. Store lead in DB linked to audit
-    const leadId = randomUUID();
-    await persistence.saveLead({ id: leadId, email, company, role, teamSize, auditId });
-
-    // 4. Trigger Async Email Send (Non-blocking)
-    const appUrl = process.env.FRONTEND_URL || "http://localhost:3000";
-    const reportLink = `${appUrl}/report/${auditId}`;
-    
-    const topRec = auditData.recommendations?.[0]?.recommendedAction || "Optimize your AI tool spend";
-
-    sendAuditEmail(email, {
-      totalSavingsYearly: auditData.totalSavingsYearly,
-      topRecommendation: topRec
-    }, reportLink).catch(err => {
-      console.error(`Failed to send async email to ${email}:`, err.message);
-    });
+    logger.logInfo('Lead created successfully', { auditId: parsed.data.auditId });
 
     res.json({ success: true, message: 'Success! Your report has been dispatched to your inbox.' });
-  } catch (error) {
-    if (error instanceof z.ZodError) {
-      return res.status(400).json({ success: false, message: error.issues[0].message });
+  } catch (error: any) {
+    // Specific business errors from service
+    if (error.message === 'Reference audit not found') {
+      logger.logWarn('Audit not found for lead', { auditId: req.body.auditId });
+      return res.status(404).json({ success: false, message: error.message });
     }
-    console.error('Lead API Error:', error);
+    if (error.message === 'Report already requested for this email') {
+      logger.logWarn('Duplicate lead detected', { auditId: req.body.auditId });
+      return res.status(400).json({ success: false, message: error.message });
+    }
+
+    logger.logError('Lead API Error', { message: error.message });
     res.status(500).json({ success: false, message: 'Could not process your request. Please try again.' });
   }
 });
