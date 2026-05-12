@@ -1,0 +1,32 @@
+[33m0901f21[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m HEAD@{0}: reset: moving to 0901f21
+[33m0169804[m HEAD@{1}: commit: skip backend tests in ci
+[33m7769680[m HEAD@{2}: commit: fix jest permission issue in github actions
+[33mac27a36[m HEAD@{3}: commit: update production environment urls
+[33mcf5b50a[m HEAD@{4}: commit: finalize documentation and QA updates
+[33m0901f21[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m HEAD@{5}: commit: add frontend application
+[33md32f4cd[m HEAD@{6}: commit: added frontend updates
+[33m06307b1[m HEAD@{7}: commit: fix: docker build
+[33m17c3a2b[m HEAD@{8}: rebase (finish): returning to refs/heads/main
+[33m17c3a2b[m HEAD@{9}: rebase (continue): fix: resolve docker build and typescript dist generation
+[33m6d9e111[m HEAD@{10}: pull origin main --rebase (start): checkout 6d9e111bacbd5eacfd4db9ae18fbd07be0a9f5f6
+[33m5862215[m[33m ([m[1;31morigin/feature/backend-optimization[m[33m, [m[1;32mfeature/backend-optimization[m[33m)[m HEAD@{11}: merge feature/backend-optimization: Fast-forward
+[33maf4450b[m HEAD@{12}: checkout: moving from feature/backend-optimization to main
+[33m5862215[m[33m ([m[1;31morigin/feature/backend-optimization[m[33m, [m[1;32mfeature/backend-optimization[m[33m)[m HEAD@{13}: commit: fix: resolve docker build and typescript dist generation
+[33maf4450b[m HEAD@{14}: checkout: moving from main to feature/backend-optimization
+[33maf4450b[m HEAD@{15}: merge feature/backend-optimization: Fast-forward
+[33m9e60c6e[m[33m ([m[1;31morigin/leftOver[m[33m, [m[1;32mleftOver[m[33m)[m HEAD@{16}: checkout: moving from feature/backend-optimization to main
+[33maf4450b[m HEAD@{17}: commit: fix(email): resolve SMTP delivery and email dispatch logging
+[33mdeb92b1[m HEAD@{18}: commit: feat(backend): implement backend optimization, middleware, logging, validation and caching
+[33m9e60c6e[m[33m ([m[1;31morigin/leftOver[m[33m, [m[1;32mleftOver[m[33m)[m HEAD@{19}: reset: moving to HEAD~1
+[33m03165fe[m HEAD@{20}: commit: feat(backend): implement backend optimization, middleware, logging, validation and caching
+[33m9e60c6e[m[33m ([m[1;31morigin/leftOver[m[33m, [m[1;32mleftOver[m[33m)[m HEAD@{21}: reset: moving to HEAD~2
+[33m6ac8ae4[m HEAD@{22}: commit: feat(backend): implement hardening, observability and security middleware
+[33m9332f81[m HEAD@{23}: commit: feat(middleware): implement rate limiting for audit and lead endpoints
+[33m9e60c6e[m[33m ([m[1;31morigin/leftOver[m[33m, [m[1;32mleftOver[m[33m)[m HEAD@{24}: checkout: moving from main to feature/backend-optimization
+[33m9e60c6e[m[33m ([m[1;31morigin/leftOver[m[33m, [m[1;32mleftOver[m[33m)[m HEAD@{25}: merge leftOver: Fast-forward
+[33m933dd25[m HEAD@{26}: checkout: moving from leftOver to main
+[33m9e60c6e[m[33m ([m[1;31morigin/leftOver[m[33m, [m[1;32mleftOver[m[33m)[m HEAD@{27}: commit: chore: update local db state
+[33m8b32516[m HEAD@{28}: commit: feat: implement complete MVP backend with audit logic, DB persistence, lead capture, email delivery, and report sharing
+[33m933dd25[m HEAD@{29}: checkout: moving from main to leftOver
+[33m933dd25[m HEAD@{30}: Branch: renamed refs/heads/master to refs/heads/main
+[33m933dd25[m HEAD@{32}: commit (initial): feat: initial complete implementation of AudMint backend and frontend
