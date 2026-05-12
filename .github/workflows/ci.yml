@@ -27,6 +27,9 @@ jobs:
         cd backend
         npm install
 
+    - name: Fix Jest Permissions
+      run: chmod +x ./backend/node_modules/.bin/jest
+
     - name: Run Backend Tests
       run: |
         cd backend
