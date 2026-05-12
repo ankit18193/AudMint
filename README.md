@@ -1,6 +1,7 @@
 # AudMint — AI Spend Audit Platform
 
 > A production-ready AI spend auditing platform that helps startups identify unnecessary AI tool expenses, optimize subscriptions, and discover cheaper alternatives with actionable recommendations.
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/ed79ce24-0824-406f-8a7f-aee2450f102a" />
 
 ## Live Demo
 
@@ -183,73 +184,40 @@ Each audit receives:
 
 ## Landing Page
 
-> INSERT SCREENSHOT HERE
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/b478af6d-8d8e-45c9-932f-f5627d6d984a" />
 
-Recommended filename:
-
-```txt
-screenshots/landing-page.png
-```
 
 ---
 
 ## Spend Input Form
 
-> INSERT SCREENSHOT HERE
+<img width="1920" height="1080" alt="{29B44350-D9B7-4B59-84F3-DBBD11610779}" src="https://github.com/user-attachments/assets/11837a85-7686-435c-a77b-523fdfb964d0" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/d15ebff0-c22d-481b-906a-fb644f67f4cf" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/883f026b-f985-41e8-b868-ae307b0da2a8" />
 
-Recommended filename:
 
-```txt
-screenshots/spend-form.png
-```
 
 ---
 
 ## Audit Results Dashboard
 
-> INSERT SCREENSHOT HERE
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/67aabba1-5c7b-4721-b3c5-871efd0ffc65" />
 
-Recommended filename:
-
-```txt
-screenshots/audit-results.png
-```
 
 ---
 
 ## AI Summary Section
 
-> INSERT SCREENSHOT HERE
-
-Recommended filename:
-
-```txt
-screenshots/ai-summary.png
-```
+<img width="1920" height="1080" alt="{3E13CD6E-4BFB-40C0-B852-78EBCDF98643}" src="https://github.com/user-attachments/assets/45b50936-90b7-4441-b60f-c7489f6feb9b" />
 
 ---
 
 ## Shareable Report URL
 
-> INSERT SCREENSHOT HERE
-
-Recommended filename:
-
-```txt
-screenshots/shareable-report.png
-```
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/70d295a2-3d42-4ed8-bde8-6eb6bbe6d895" />
 
 ---
 
-## Mobile Responsive Design
-
-> INSERT SCREENSHOT HERE
-
-Recommended filename:
-
-```txt
-screenshots/mobile-view.png
-```
 
 ---
 
@@ -578,18 +546,6 @@ Planned future features:
 
 ---
 
-# Screenshots Checklist
-
-Before submission ensure screenshots include:
-
-* Landing page
-* Spend form
-* Audit result page
-* AI-generated summary
-* Mobile responsiveness
-* Shareable audit page
-* Lead capture flow
-* Lighthouse report
 
 ---
 
@@ -663,20 +619,7 @@ For the Credex Web Development Internship Assignment.
 
 ---
 
-# Submission Checklist
 
-* [x] Public GitHub repository
-* [x] Live deployed frontend
-* [x] Live backend API
-* [x] Working audit engine
-* [x] AI summary integration
-* [x] Lead capture system
-* [x] Shareable reports
-* [x] CI/CD workflow
-* [x] Documentation files
-* [x] Tests included
-* [x] Responsive design
-* [x] Pricing references
 
 ---
 
