@@ -18,9 +18,10 @@ export const leadService = {
     const { email, auditId, company, role, teamSize } = data;
 
     // 1. Check for existing audit
+    logger.logInfo('Checking for audit existence', { auditId });
     const auditData = await persistence.getAudit(auditId);
     if (!auditData) {
-      logger.logWarn('Reference audit not found', { auditId });
+      logger.logWarn('Reference audit not found in DB', { auditId });
       throw new Error('Reference audit not found');
     }
 
@@ -34,7 +35,7 @@ export const leadService = {
     // 3. Store lead in DB
     const leadId = randomUUID();
     await persistence.saveLead({ id: leadId, email, company, role, teamSize, auditId });
-    logger.logInfo('Lead stored in database', { leadId, auditId });
+    logger.logInfo('Lead successfully stored in database', { leadId, auditId });
 
     // Analytics
     trackEvent('lead_submitted', { auditId });
@@ -42,14 +43,19 @@ export const leadService = {
     // 4. Trigger Email (Non-blocking)
     const appUrl = config.frontendUrl;
     const reportLink = `${appUrl}/report/${auditId}`;
-    
+
     const topRec = auditData.recommendations?.[0]?.recommendedAction || "Optimize your AI tool spend";
 
-    sendAuditEmail(email, {
+    logger.logInfo('Triggering email dispatch', { email, reportLink });
+
+    await sendAuditEmail(email, {
       totalSavingsYearly: auditData.totalSavingsYearly,
       topRecommendation: topRec
     }, reportLink);
 
+    logger.logInfo('Email dispatch completed', { email });
+
     return { success: true };
+
   }
 };

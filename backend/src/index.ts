@@ -14,6 +14,13 @@ logger.logInfo('AudMint Backend starting up...');
 app.use(cors());
 app.use(express.json());
 
+// Request logging
+app.use((req, res, next) => {
+  logger.logInfo(`[${req.method}] ${req.url}`);
+  next();
+});
+
+
 // Routes
 app.use('/api/audit', auditRouter);
 app.use('/api/lead', leadRouter);
@@ -32,4 +39,4 @@ app.listen(PORT, () => {
 });
 
 // Keep process alive if database connection is slow or failing
-setInterval(() => {}, 60000);
+setInterval(() => { }, 60000);

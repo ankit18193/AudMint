@@ -1465,6 +1465,780 @@
       "aiSummary": "We identified $6,468 in potential annual savings. The most significant opportunity is with Cursor, where you can save $2,880 by switch from cursor to github copilot. We recommend consolidating duplicate tools and trimming excess seats to maintain a lean, high-ROI AI stack.",
       "createdAt": "2026-05-11T18:10:07.826Z",
       "created_at": "2026-05-11T18:10:07.844Z"
+    },
+    "373d369f-2e45-4c74-a165-861d8d12b07d": {
+      "id": "373d369f-2e45-4c74-a165-861d8d12b07d",
+      "teamSize": 141,
+      "primaryUseCase": "coding",
+      "tools": [
+        {
+          "name": "GitHub Copilot",
+          "plan": "Individual",
+          "seats": 22
+        },
+        {
+          "name": "ChatGPT",
+          "plan": "Plus",
+          "seats": 20
+        },
+        {
+          "name": "Claude",
+          "plan": "Free",
+          "seats": 34
+        },
+        {
+          "name": "Cursor",
+          "plan": "Pro",
+          "seats": 42
+        },
+        {
+          "name": "Gemini",
+          "plan": "Pro",
+          "seats": 13
+        },
+        {
+          "name": "Anthropic API direct",
+          "plan": "Usage-based",
+          "seats": 15
+        }
+      ],
+      "totalSavingsMonthly": 820,
+      "totalSavingsYearly": 9840,
+      "recommendations": [
+        {
+          "tool": "ChatGPT",
+          "currentPlan": "Plus",
+          "recommendedPlan": "Free",
+          "recommendedAction": "Downgrade to Free plan",
+          "savingsMonthly": 400,
+          "savingsAnnual": 4800,
+          "reason": "As a coding-focused team, the free tier of ChatGPT is sufficient for occasional documentation.",
+          "type": "tier_downgrade"
+        },
+        {
+          "tool": "Cursor",
+          "currentPlan": "Pro ($20/seat)",
+          "recommendedPlan": "GitHub Copilot Pro ($10/seat)",
+          "recommendedAction": "Switch from Cursor to GitHub Copilot",
+          "savingsMonthly": 420,
+          "savingsAnnual": 5040,
+          "reason": "GitHub Copilot offers similar coding capabilities at a more competitive price point for your team.",
+          "type": "cross_vendor"
+        }
+      ],
+      "globalInsight": {
+        "title": "High-Impact Savings Identified",
+        "description": "Your stack has significant optimization potential. Implementing these changes will save over $9,840 annually.",
+        "savingsYearly": 9840
+      },
+      "aiSummary": "We identified $9,840 in potential annual savings. The most significant opportunity is with ChatGPT, where you can save $4,800 by downgrade to free plan. We recommend consolidating duplicate tools and trimming excess seats to maintain a lean, high-ROI AI stack.",
+      "createdAt": "2026-05-11T19:40:46.483Z",
+      "created_at": "2026-05-11T19:40:46.484Z"
+    },
+    "3e1520ca-1d70-4987-8419-a93db900bcc7": {
+      "id": "3e1520ca-1d70-4987-8419-a93db900bcc7",
+      "teamSize": 22,
+      "primaryUseCase": "coding",
+      "tools": [
+        {
+          "name": "Cursor",
+          "plan": "Hobby",
+          "seats": 14
+        },
+        {
+          "name": "GitHub Copilot",
+          "plan": "Business",
+          "seats": 14
+        },
+        {
+          "name": "ChatGPT",
+          "plan": "Plus",
+          "seats": 13
+        },
+        {
+          "name": "Claude",
+          "plan": "Pro",
+          "seats": 11
+        }
+      ],
+      "totalSavingsMonthly": 756,
+      "totalSavingsYearly": 9072,
+      "recommendations": [
+        {
+          "tool": "GitHub Copilot",
+          "currentPlan": "Business ($19/seat)",
+          "recommendedPlan": "Windsurf Pro ($15/seat)",
+          "recommendedAction": "Switch from GitHub Copilot to Windsurf",
+          "savingsMonthly": 56,
+          "savingsAnnual": 672,
+          "reason": "Windsurf offers similar coding capabilities at a more competitive price point for your team.",
+          "type": "cross_vendor"
+        },
+        {
+          "tool": "ChatGPT",
+          "currentPlan": "Plus",
+          "recommendedPlan": "Free",
+          "recommendedAction": "Downgrade to Free plan",
+          "savingsMonthly": 260,
+          "savingsAnnual": 3120,
+          "reason": "As a coding-focused team, the free tier of ChatGPT is sufficient for occasional documentation.",
+          "type": "tier_downgrade"
+        },
+        {
+          "tool": "Claude",
+          "currentPlan": "Pro",
+          "recommendedPlan": "Free",
+          "recommendedAction": "Downgrade to Free plan",
+          "savingsMonthly": 220,
+          "savingsAnnual": 2640,
+          "reason": "As a coding-focused team, the free tier of Claude is sufficient for occasional documentation.",
+          "type": "tier_downgrade"
+        },
+        {
+          "tool": "Claude",
+          "currentPlan": "Pro",
+          "recommendedPlan": "None (Cancel)",
+          "recommendedAction": "Consolidate Claude into ChatGPT",
+          "savingsMonthly": 220,
+          "savingsAnnual": 2640,
+          "reason": "You are paying for multiple writing tools. ChatGPT covers your needs.",
+          "type": "duplicate_tool"
+        }
+      ],
+      "globalInsight": {
+        "title": "High-Impact Savings Identified",
+        "description": "Your stack has significant optimization potential. Implementing these changes will save over $9,072 annually.",
+        "savingsYearly": 9072
+      },
+      "aiSummary": "We identified $9,072 in potential annual savings. The most significant opportunity is with GitHub Copilot, where you can save $672 by switch from github copilot to windsurf. We recommend consolidating duplicate tools and trimming excess seats to maintain a lean, high-ROI AI stack.",
+      "createdAt": "2026-05-11T20:00:40.306Z",
+      "created_at": "2026-05-11T20:00:40.328Z"
+    },
+    "cc2545fc-ebd8-4892-91d8-972f5abedb05": {
+      "id": "cc2545fc-ebd8-4892-91d8-972f5abedb05",
+      "teamSize": 15,
+      "primaryUseCase": "coding",
+      "tools": [
+        {
+          "name": "GitHub Copilot",
+          "plan": "Business",
+          "seats": 7
+        },
+        {
+          "name": "ChatGPT",
+          "plan": "Plus",
+          "seats": 10
+        },
+        {
+          "name": "Claude",
+          "plan": "Free",
+          "seats": 7
+        },
+        {
+          "name": "Cursor",
+          "plan": "Pro",
+          "seats": 9
+        }
+      ],
+      "totalSavingsMonthly": 451,
+      "totalSavingsYearly": 5412,
+      "recommendations": [
+        {
+          "tool": "GitHub Copilot",
+          "currentPlan": "Business ($19/seat)",
+          "recommendedPlan": "Windsurf Pro ($15/seat)",
+          "recommendedAction": "Switch from GitHub Copilot to Windsurf",
+          "savingsMonthly": 28,
+          "savingsAnnual": 336,
+          "reason": "Windsurf offers similar coding capabilities at a more competitive price point for your team.",
+          "type": "cross_vendor"
+        },
+        {
+          "tool": "ChatGPT",
+          "currentPlan": "Plus",
+          "recommendedPlan": "Free",
+          "recommendedAction": "Downgrade to Free plan",
+          "savingsMonthly": 200,
+          "savingsAnnual": 2400,
+          "reason": "As a coding-focused team, the free tier of ChatGPT is sufficient for occasional documentation.",
+          "type": "tier_downgrade"
+        },
+        {
+          "tool": "Cursor",
+          "currentPlan": "Pro ($20/seat)",
+          "recommendedPlan": "GitHub Copilot Pro ($10/seat)",
+          "recommendedAction": "Switch from Cursor to GitHub Copilot",
+          "savingsMonthly": 90,
+          "savingsAnnual": 1080,
+          "reason": "GitHub Copilot offers similar coding capabilities at a more competitive price point for your team.",
+          "type": "cross_vendor"
+        },
+        {
+          "tool": "GitHub Copilot",
+          "currentPlan": "Business",
+          "recommendedPlan": "None (Cancel)",
+          "recommendedAction": "Consolidate GitHub Copilot into Cursor",
+          "savingsMonthly": 133,
+          "savingsAnnual": 1596,
+          "reason": "You are paying for multiple coding tools. Cursor covers your needs.",
+          "type": "duplicate_tool"
+        }
+      ],
+      "aiSummary": "We identified $5,412 in potential annual savings. The most significant opportunity is with GitHub Copilot, where you can save $336 by switch from github copilot to windsurf. We recommend consolidating duplicate tools and trimming excess seats to maintain a lean, high-ROI AI stack.",
+      "createdAt": "2026-05-11T20:08:14.952Z",
+      "created_at": "2026-05-11T20:08:14.966Z"
+    },
+    "e5ffc8d4-da29-4dd5-beb8-7d2a1dc82ecd": {
+      "id": "e5ffc8d4-da29-4dd5-beb8-7d2a1dc82ecd",
+      "teamSize": 17,
+      "primaryUseCase": "coding",
+      "tools": [
+        {
+          "name": "Claude",
+          "plan": "Pro",
+          "seats": 23
+        },
+        {
+          "name": "ChatGPT",
+          "plan": "Plus",
+          "seats": 14
+        }
+      ],
+      "totalSavingsMonthly": 1020,
+      "totalSavingsYearly": 12240,
+      "recommendations": [
+        {
+          "tool": "Claude",
+          "currentPlan": "Pro (23 seats)",
+          "recommendedPlan": "Pro (17 seats)",
+          "recommendedAction": "Reduce Claude seats from 23 to 17",
+          "savingsMonthly": 120,
+          "savingsAnnual": 1440,
+          "reason": "Your reported team size is 17, but you are paying for 23 seats.",
+          "type": "seat_optimization"
+        },
+        {
+          "tool": "Claude",
+          "currentPlan": "Pro",
+          "recommendedPlan": "Free",
+          "recommendedAction": "Downgrade to Free plan",
+          "savingsMonthly": 340,
+          "savingsAnnual": 4080,
+          "reason": "As a coding-focused team, the free tier of Claude is sufficient for occasional documentation.",
+          "type": "tier_downgrade"
+        },
+        {
+          "tool": "ChatGPT",
+          "currentPlan": "Plus",
+          "recommendedPlan": "Free",
+          "recommendedAction": "Downgrade to Free plan",
+          "savingsMonthly": 280,
+          "savingsAnnual": 3360,
+          "reason": "As a coding-focused team, the free tier of ChatGPT is sufficient for occasional documentation.",
+          "type": "tier_downgrade"
+        },
+        {
+          "tool": "ChatGPT",
+          "currentPlan": "Plus",
+          "recommendedPlan": "None (Cancel)",
+          "recommendedAction": "Consolidate ChatGPT into Claude",
+          "savingsMonthly": 280,
+          "savingsAnnual": 3360,
+          "reason": "You are paying for multiple writing tools. Claude covers your needs.",
+          "type": "duplicate_tool"
+        }
+      ],
+      "globalInsight": {
+        "title": "High-Impact Savings Identified",
+        "description": "Your stack has significant optimization potential. Implementing these changes will save over $12,240 annually.",
+        "savingsYearly": 12240
+      },
+      "aiSummary": "We identified $12,240 in potential annual savings. The most significant opportunity is with Claude, where you can save $1,440 by reduce claude seats from 23 to 17. We recommend consolidating duplicate tools and trimming excess seats to maintain a lean, high-ROI AI stack.",
+      "createdAt": "2026-05-12T08:37:13.004Z",
+      "created_at": "2026-05-12T08:37:13.005Z"
+    },
+    "8d29f2f8-0e50-4beb-9217-e842b29213df": {
+      "id": "8d29f2f8-0e50-4beb-9217-e842b29213df",
+      "teamSize": 7,
+      "primaryUseCase": "coding",
+      "tools": [
+        {
+          "name": "Anthropic API direct",
+          "plan": "Usage-based",
+          "seats": 8
+        },
+        {
+          "name": "v0",
+          "plan": "Pro",
+          "seats": 8
+        },
+        {
+          "name": "Gemini",
+          "plan": "Pro",
+          "seats": 9
+        },
+        {
+          "name": "Windsurf",
+          "plan": "Pro",
+          "seats": 8
+        }
+      ],
+      "totalSavingsMonthly": 70,
+      "totalSavingsYearly": 840,
+      "recommendations": [
+        {
+          "tool": "v0",
+          "currentPlan": "Pro (8 seats)",
+          "recommendedPlan": "Pro (7 seats)",
+          "recommendedAction": "Reduce v0 seats from 8 to 7",
+          "savingsMonthly": 20,
+          "savingsAnnual": 240,
+          "reason": "Your reported team size is 7, but you are paying for 8 seats.",
+          "type": "seat_optimization"
+        },
+        {
+          "tool": "Windsurf",
+          "currentPlan": "Pro (8 seats)",
+          "recommendedPlan": "Pro (7 seats)",
+          "recommendedAction": "Reduce Windsurf seats from 8 to 7",
+          "savingsMonthly": 15,
+          "savingsAnnual": 180,
+          "reason": "Your reported team size is 7, but you are paying for 8 seats.",
+          "type": "seat_optimization"
+        },
+        {
+          "tool": "Windsurf",
+          "currentPlan": "Pro ($15/seat)",
+          "recommendedPlan": "GitHub Copilot Pro ($10/seat)",
+          "recommendedAction": "Switch from Windsurf to GitHub Copilot",
+          "savingsMonthly": 35,
+          "savingsAnnual": 420,
+          "reason": "GitHub Copilot offers similar coding capabilities at a more competitive price point for your team.",
+          "type": "cross_vendor"
+        }
+      ],
+      "aiSummary": "Your AI stack is already highly optimized. Our analysis shows your current configuration is lean and well-aligned with your team size and use cases. We found less than $100 in monthly savings, which suggests a high-efficiency operation. No major changes recommended.",
+      "createdAt": "2026-05-12T08:53:28.454Z",
+      "created_at": "2026-05-12T08:53:28.468Z"
+    },
+    "1f9f9af6-3fe2-4ecd-a5c3-40597f62e691": {
+      "id": "1f9f9af6-3fe2-4ecd-a5c3-40597f62e691",
+      "teamSize": 10,
+      "primaryUseCase": "coding",
+      "tools": [
+        {
+          "name": "Cursor",
+          "plan": "Hobby",
+          "seats": 10
+        },
+        {
+          "name": "ChatGPT",
+          "plan": "Plus",
+          "seats": 10
+        },
+        {
+          "name": "Claude",
+          "plan": "Pro",
+          "seats": 13
+        }
+      ],
+      "totalSavingsMonthly": 660,
+      "totalSavingsYearly": 7920,
+      "recommendations": [
+        {
+          "tool": "ChatGPT",
+          "currentPlan": "Plus",
+          "recommendedPlan": "Free",
+          "recommendedAction": "Downgrade to Free plan",
+          "savingsMonthly": 200,
+          "savingsAnnual": 2400,
+          "reason": "As a coding-focused team, the free tier of ChatGPT is sufficient for occasional documentation.",
+          "type": "tier_downgrade"
+        },
+        {
+          "tool": "Claude",
+          "currentPlan": "Pro (13 seats)",
+          "recommendedPlan": "Pro (10 seats)",
+          "recommendedAction": "Reduce Claude seats from 13 to 10",
+          "savingsMonthly": 60,
+          "savingsAnnual": 720,
+          "reason": "Your reported team size is 10, but you are paying for 13 seats.",
+          "type": "seat_optimization"
+        },
+        {
+          "tool": "Claude",
+          "currentPlan": "Pro",
+          "recommendedPlan": "Free",
+          "recommendedAction": "Downgrade to Free plan",
+          "savingsMonthly": 200,
+          "savingsAnnual": 2400,
+          "reason": "As a coding-focused team, the free tier of Claude is sufficient for occasional documentation.",
+          "type": "tier_downgrade"
+        },
+        {
+          "tool": "Claude",
+          "currentPlan": "Pro",
+          "recommendedPlan": "None (Cancel)",
+          "recommendedAction": "Consolidate Claude into ChatGPT",
+          "savingsMonthly": 200,
+          "savingsAnnual": 2400,
+          "reason": "You are paying for multiple writing tools. ChatGPT covers your needs.",
+          "type": "duplicate_tool"
+        }
+      ],
+      "globalInsight": {
+        "title": "High-Impact Savings Identified",
+        "description": "Your stack has significant optimization potential. Implementing these changes will save over $7,920 annually.",
+        "savingsYearly": 7920
+      },
+      "aiSummary": "We identified $7,920 in potential annual savings. The most significant opportunity is with ChatGPT, where you can save $2,400 by downgrade to free plan. We recommend consolidating duplicate tools and trimming excess seats to maintain a lean, high-ROI AI stack.",
+      "createdAt": "2026-05-12T09:24:06.598Z",
+      "created_at": "2026-05-12T09:24:06.618Z"
+    },
+    "016106ea-41e4-4c64-93ff-216016eb3578": {
+      "id": "016106ea-41e4-4c64-93ff-216016eb3578",
+      "teamSize": 23,
+      "primaryUseCase": "coding",
+      "tools": [
+        {
+          "name": "GitHub Copilot",
+          "plan": "Enterprise",
+          "seats": 16
+        },
+        {
+          "name": "Claude",
+          "plan": "Pro",
+          "seats": 19
+        },
+        {
+          "name": "ChatGPT",
+          "plan": "Plus",
+          "seats": 23
+        }
+      ],
+      "totalSavingsMonthly": 1300,
+      "totalSavingsYearly": 15600,
+      "recommendations": [
+        {
+          "tool": "Claude",
+          "currentPlan": "Pro",
+          "recommendedPlan": "Free",
+          "recommendedAction": "Downgrade to Free plan",
+          "savingsMonthly": 380,
+          "savingsAnnual": 4560,
+          "reason": "As a coding-focused team, the free tier of Claude is sufficient for occasional documentation.",
+          "type": "tier_downgrade"
+        },
+        {
+          "tool": "ChatGPT",
+          "currentPlan": "Plus",
+          "recommendedPlan": "Free",
+          "recommendedAction": "Downgrade to Free plan",
+          "savingsMonthly": 460,
+          "savingsAnnual": 5520,
+          "reason": "As a coding-focused team, the free tier of ChatGPT is sufficient for occasional documentation.",
+          "type": "tier_downgrade"
+        },
+        {
+          "tool": "ChatGPT",
+          "currentPlan": "Plus",
+          "recommendedPlan": "None (Cancel)",
+          "recommendedAction": "Consolidate ChatGPT into Claude",
+          "savingsMonthly": 460,
+          "savingsAnnual": 5520,
+          "reason": "You are paying for multiple writing tools. Claude covers your needs.",
+          "type": "duplicate_tool"
+        }
+      ],
+      "globalInsight": {
+        "title": "High-Impact Savings Identified",
+        "description": "Your stack has significant optimization potential. Implementing these changes will save over $15,600 annually.",
+        "savingsYearly": 15600
+      },
+      "aiSummary": "We identified $15,600 in potential annual savings. The most significant opportunity is with Claude, where you can save $4,560 by downgrade to free plan. We recommend consolidating duplicate tools and trimming excess seats to maintain a lean, high-ROI AI stack.",
+      "createdAt": "2026-05-12T09:30:02.514Z",
+      "created_at": "2026-05-12T09:30:02.539Z"
+    },
+    "936717fc-6f39-4fa0-852a-ed98ec0fe403": {
+      "id": "936717fc-6f39-4fa0-852a-ed98ec0fe403",
+      "teamSize": 24,
+      "primaryUseCase": "coding",
+      "tools": [
+        {
+          "name": "ChatGPT",
+          "plan": "Plus",
+          "seats": 10
+        },
+        {
+          "name": "Claude",
+          "plan": "Free",
+          "seats": 7
+        },
+        {
+          "name": "Gemini",
+          "plan": "Pro",
+          "seats": 11
+        }
+      ],
+      "totalSavingsMonthly": 200,
+      "totalSavingsYearly": 2400,
+      "recommendations": [
+        {
+          "tool": "ChatGPT",
+          "currentPlan": "Plus",
+          "recommendedPlan": "Free",
+          "recommendedAction": "Downgrade to Free plan",
+          "savingsMonthly": 200,
+          "savingsAnnual": 2400,
+          "reason": "As a coding-focused team, the free tier of ChatGPT is sufficient for occasional documentation.",
+          "type": "tier_downgrade"
+        }
+      ],
+      "aiSummary": "We identified $2,400 in potential annual savings. The most significant opportunity is with ChatGPT, where you can save $2,400 by downgrade to free plan. We recommend consolidating duplicate tools and trimming excess seats to maintain a lean, high-ROI AI stack.",
+      "createdAt": "2026-05-12T09:36:05.671Z",
+      "created_at": "2026-05-12T09:36:05.687Z"
+    },
+    "7d10f8e1-5876-49d6-84ba-86c5f42e7d01": {
+      "id": "7d10f8e1-5876-49d6-84ba-86c5f42e7d01",
+      "teamSize": 7,
+      "primaryUseCase": "coding",
+      "tools": [
+        {
+          "name": "GitHub Copilot",
+          "plan": "Individual",
+          "seats": 1
+        },
+        {
+          "name": "Cursor",
+          "plan": "Pro",
+          "seats": 19
+        }
+      ],
+      "totalSavingsMonthly": 240,
+      "totalSavingsYearly": 2880,
+      "recommendations": [
+        {
+          "tool": "Cursor",
+          "currentPlan": "Pro (19 seats)",
+          "recommendedPlan": "Pro (7 seats)",
+          "recommendedAction": "Reduce Cursor seats from 19 to 7",
+          "savingsMonthly": 240,
+          "savingsAnnual": 2880,
+          "reason": "Your reported team size is 7, but you are paying for 19 seats.",
+          "type": "seat_optimization"
+        }
+      ],
+      "aiSummary": "We identified $2,880 in potential annual savings. The most significant opportunity is with Cursor, where you can save $2,880 by reduce cursor seats from 19 to 7. We recommend consolidating duplicate tools and trimming excess seats to maintain a lean, high-ROI AI stack.",
+      "createdAt": "2026-05-12T09:40:00.798Z",
+      "created_at": "2026-05-12T09:40:00.818Z"
+    },
+    "1987d8ee-2e4c-44fe-92eb-2f6e31f95171": {
+      "id": "1987d8ee-2e4c-44fe-92eb-2f6e31f95171",
+      "teamSize": 7,
+      "primaryUseCase": "coding",
+      "tools": [
+        {
+          "name": "GitHub Copilot",
+          "plan": "Individual",
+          "seats": 1
+        },
+        {
+          "name": "Cursor",
+          "plan": "Pro",
+          "seats": 19
+        },
+        {
+          "name": "Claude",
+          "plan": "Free",
+          "seats": 3
+        }
+      ],
+      "totalSavingsMonthly": 240,
+      "totalSavingsYearly": 2880,
+      "recommendations": [
+        {
+          "tool": "Cursor",
+          "currentPlan": "Pro (19 seats)",
+          "recommendedPlan": "Pro (7 seats)",
+          "recommendedAction": "Reduce Cursor seats from 19 to 7",
+          "savingsMonthly": 240,
+          "savingsAnnual": 2880,
+          "reason": "Your reported team size is 7, but you are paying for 19 seats.",
+          "type": "seat_optimization"
+        }
+      ],
+      "aiSummary": "We identified $2,880 in potential annual savings. The most significant opportunity is with Cursor, where you can save $2,880 by reduce cursor seats from 19 to 7. We recommend consolidating duplicate tools and trimming excess seats to maintain a lean, high-ROI AI stack.",
+      "createdAt": "2026-05-12T09:43:46.369Z",
+      "created_at": "2026-05-12T09:43:46.382Z"
+    },
+    "8110e0fd-a3ed-4b45-bd01-27e1de7ec314": {
+      "id": "8110e0fd-a3ed-4b45-bd01-27e1de7ec314",
+      "teamSize": 21,
+      "primaryUseCase": "coding",
+      "tools": [
+        {
+          "name": "Cursor",
+          "plan": "Hobby",
+          "seats": 5
+        },
+        {
+          "name": "Claude",
+          "plan": "Pro",
+          "seats": 8
+        }
+      ],
+      "totalSavingsMonthly": 160,
+      "totalSavingsYearly": 1920,
+      "recommendations": [
+        {
+          "tool": "Claude",
+          "currentPlan": "Pro",
+          "recommendedPlan": "Free",
+          "recommendedAction": "Downgrade to Free plan",
+          "savingsMonthly": 160,
+          "savingsAnnual": 1920,
+          "reason": "As a coding-focused team, the free tier of Claude is sufficient for occasional documentation.",
+          "type": "tier_downgrade"
+        }
+      ],
+      "aiSummary": "We identified $1,920 in potential annual savings. The most significant opportunity is with Claude, where you can save $1,920 by downgrade to free plan. We recommend consolidating duplicate tools and trimming excess seats to maintain a lean, high-ROI AI stack.",
+      "createdAt": "2026-05-12T09:46:53.229Z",
+      "created_at": "2026-05-12T09:46:53.234Z"
+    },
+    "0e9da71a-881e-432e-831f-563a77f57a77": {
+      "id": "0e9da71a-881e-432e-831f-563a77f57a77",
+      "teamSize": 44,
+      "primaryUseCase": "coding",
+      "tools": [
+        {
+          "name": "Cursor",
+          "plan": "Hobby",
+          "seats": 1
+        },
+        {
+          "name": "Claude",
+          "plan": "Max",
+          "seats": 25
+        },
+        {
+          "name": "ChatGPT",
+          "plan": "Plus",
+          "seats": 14
+        }
+      ],
+      "totalSavingsMonthly": 280,
+      "totalSavingsYearly": 3360,
+      "recommendations": [
+        {
+          "tool": "ChatGPT",
+          "currentPlan": "Plus",
+          "recommendedPlan": "Free",
+          "recommendedAction": "Downgrade to Free plan",
+          "savingsMonthly": 280,
+          "savingsAnnual": 3360,
+          "reason": "As a coding-focused team, the free tier of ChatGPT is sufficient for occasional documentation.",
+          "type": "tier_downgrade"
+        }
+      ],
+      "aiSummary": "We identified $3,360 in potential annual savings. The most significant opportunity is with ChatGPT, where you can save $3,360 by downgrade to free plan. We recommend consolidating duplicate tools and trimming excess seats to maintain a lean, high-ROI AI stack.",
+      "createdAt": "2026-05-12T09:56:25.968Z",
+      "created_at": "2026-05-12T09:56:25.992Z"
+    },
+    "c79dc520-a0fb-44f6-a387-f81bb6af3e65": {
+      "id": "c79dc520-a0fb-44f6-a387-f81bb6af3e65",
+      "teamSize": 56,
+      "primaryUseCase": "coding",
+      "tools": [
+        {
+          "name": "GitHub Copilot",
+          "plan": "Individual",
+          "seats": 1
+        },
+        {
+          "name": "ChatGPT",
+          "plan": "Plus",
+          "seats": 1
+        }
+      ],
+      "totalSavingsMonthly": 20,
+      "totalSavingsYearly": 240,
+      "recommendations": [
+        {
+          "tool": "ChatGPT",
+          "currentPlan": "Plus",
+          "recommendedPlan": "Free",
+          "recommendedAction": "Downgrade to Free plan",
+          "savingsMonthly": 20,
+          "savingsAnnual": 240,
+          "reason": "As a coding-focused team, the free tier of ChatGPT is sufficient for occasional documentation.",
+          "type": "tier_downgrade"
+        }
+      ],
+      "aiSummary": "Your AI stack is already highly optimized. Our analysis shows your current configuration is lean and well-aligned with your team size and use cases. We found less than $100 in monthly savings, which suggests a high-efficiency operation. No major changes recommended.",
+      "createdAt": "2026-05-12T10:03:49.468Z",
+      "created_at": "2026-05-12T10:03:49.470Z"
+    },
+    "edf44107-3796-40e5-b5b9-18d1ed03c470": {
+      "id": "edf44107-3796-40e5-b5b9-18d1ed03c470",
+      "teamSize": 12,
+      "primaryUseCase": "coding",
+      "tools": [
+        {
+          "name": "GitHub Copilot",
+          "plan": "Individual",
+          "seats": 11
+        },
+        {
+          "name": "ChatGPT",
+          "plan": "Plus",
+          "seats": 4
+        },
+        {
+          "name": "Anthropic API direct",
+          "plan": "Usage-based",
+          "seats": 10
+        }
+      ],
+      "totalSavingsMonthly": 80,
+      "totalSavingsYearly": 960,
+      "recommendations": [
+        {
+          "tool": "ChatGPT",
+          "currentPlan": "Plus",
+          "recommendedPlan": "Free",
+          "recommendedAction": "Downgrade to Free plan",
+          "savingsMonthly": 80,
+          "savingsAnnual": 960,
+          "reason": "As a coding-focused team, the free tier of ChatGPT is sufficient for occasional documentation.",
+          "type": "tier_downgrade"
+        }
+      ],
+      "aiSummary": "Your AI stack is already highly optimized. Our analysis shows your current configuration is lean and well-aligned with your team size and use cases. We found less than $100 in monthly savings, which suggests a high-efficiency operation. No major changes recommended.",
+      "createdAt": "2026-05-12T10:10:22.754Z",
+      "created_at": "2026-05-12T10:10:22.767Z"
+    },
+    "14554d28-9a33-428d-8c0a-e2745e8da439": {
+      "id": "14554d28-9a33-428d-8c0a-e2745e8da439",
+      "teamSize": 56,
+      "primaryUseCase": "mixed",
+      "tools": [
+        {
+          "name": "GitHub Copilot",
+          "plan": "Individual",
+          "seats": 15
+        },
+        {
+          "name": "ChatGPT",
+          "plan": "Plus",
+          "seats": 17
+        }
+      ],
+      "totalSavingsMonthly": 0,
+      "totalSavingsYearly": 0,
+      "recommendations": [],
+      "aiSummary": "Your AI stack is already highly optimized. Our analysis shows your current configuration is lean and well-aligned with your team size and use cases. We found less than $100 in monthly savings, which suggests a high-efficiency operation. No major changes recommended.",
+      "createdAt": "2026-05-12T10:11:12.227Z",
+      "created_at": "2026-05-12T10:11:12.228Z"
     }
   },
   "leads": {
@@ -1543,6 +2317,153 @@
       "auditId": "b502b8e8-8ef6-474b-8cb7-1175eaf8f907",
       "audit_id": "b502b8e8-8ef6-474b-8cb7-1175eaf8f907",
       "created_at": "2026-05-11T18:10:44.830Z"
+    },
+    "968edd72-2758-41fd-9b44-e44276350547": {
+      "id": "968edd72-2758-41fd-9b44-e44276350547",
+      "email": "ankityadav18193@gmail.com",
+      "company": "",
+      "role": "",
+      "teamSize": 141,
+      "auditId": "373d369f-2e45-4c74-a165-861d8d12b07d",
+      "audit_id": "373d369f-2e45-4c74-a165-861d8d12b07d",
+      "created_at": "2026-05-11T19:41:12.874Z"
+    },
+    "2c0452e2-4f3a-4742-9148-218787df6c26": {
+      "id": "2c0452e2-4f3a-4742-9148-218787df6c26",
+      "email": "ankityadav18193@gmail.com",
+      "company": "",
+      "role": "",
+      "teamSize": 22,
+      "auditId": "3e1520ca-1d70-4987-8419-a93db900bcc7",
+      "audit_id": "3e1520ca-1d70-4987-8419-a93db900bcc7",
+      "created_at": "2026-05-11T20:02:44.510Z"
+    },
+    "aabf8ad0-2589-4c3e-b436-8c4fa0116775": {
+      "id": "aabf8ad0-2589-4c3e-b436-8c4fa0116775",
+      "email": "ankityadav18193@gmail.com",
+      "company": "",
+      "role": "",
+      "teamSize": 15,
+      "auditId": "cc2545fc-ebd8-4892-91d8-972f5abedb05",
+      "audit_id": "cc2545fc-ebd8-4892-91d8-972f5abedb05",
+      "created_at": "2026-05-11T20:08:50.569Z"
+    },
+    "543fa815-f613-4ac1-aab2-d77198e9e192": {
+      "id": "543fa815-f613-4ac1-aab2-d77198e9e192",
+      "email": "ankityadav18193@gmail.com",
+      "company": "",
+      "role": "",
+      "teamSize": 17,
+      "auditId": "e5ffc8d4-da29-4dd5-beb8-7d2a1dc82ecd",
+      "audit_id": "e5ffc8d4-da29-4dd5-beb8-7d2a1dc82ecd",
+      "created_at": "2026-05-12T08:37:55.241Z"
+    },
+    "55f18903-76ff-43f7-8199-a60867ba4c04": {
+      "id": "55f18903-76ff-43f7-8199-a60867ba4c04",
+      "email": "ankityadav18193@gmail.com",
+      "company": "",
+      "role": "",
+      "teamSize": 7,
+      "auditId": "8d29f2f8-0e50-4beb-9217-e842b29213df",
+      "audit_id": "8d29f2f8-0e50-4beb-9217-e842b29213df",
+      "created_at": "2026-05-12T08:54:00.332Z"
+    },
+    "66c25f35-1a00-4672-a6eb-0b8ac8fd3d30": {
+      "id": "66c25f35-1a00-4672-a6eb-0b8ac8fd3d30",
+      "email": "ankityadav18193@gmail.com",
+      "company": "",
+      "role": "",
+      "teamSize": 10,
+      "auditId": "1f9f9af6-3fe2-4ecd-a5c3-40597f62e691",
+      "audit_id": "1f9f9af6-3fe2-4ecd-a5c3-40597f62e691",
+      "created_at": "2026-05-12T09:24:24.018Z"
+    },
+    "f8a00934-cf47-4040-ac25-073ca06bc6f8": {
+      "id": "f8a00934-cf47-4040-ac25-073ca06bc6f8",
+      "email": "ankityadav18193@gmail.com",
+      "company": "",
+      "role": "",
+      "teamSize": 23,
+      "auditId": "016106ea-41e4-4c64-93ff-216016eb3578",
+      "audit_id": "016106ea-41e4-4c64-93ff-216016eb3578",
+      "created_at": "2026-05-12T09:30:38.006Z"
+    },
+    "da65f1a7-bf73-401f-84f3-a46e4a518b6a": {
+      "id": "da65f1a7-bf73-401f-84f3-a46e4a518b6a",
+      "email": "ankityadav18193@gmail.com",
+      "company": "",
+      "role": "",
+      "teamSize": 24,
+      "auditId": "936717fc-6f39-4fa0-852a-ed98ec0fe403",
+      "audit_id": "936717fc-6f39-4fa0-852a-ed98ec0fe403",
+      "created_at": "2026-05-12T09:36:33.670Z"
+    },
+    "13d28fd0-8ca1-4d3d-b258-08afce20b2cf": {
+      "id": "13d28fd0-8ca1-4d3d-b258-08afce20b2cf",
+      "email": "ankityadav18193@gmail.com",
+      "company": "",
+      "role": "",
+      "teamSize": 7,
+      "auditId": "7d10f8e1-5876-49d6-84ba-86c5f42e7d01",
+      "audit_id": "7d10f8e1-5876-49d6-84ba-86c5f42e7d01",
+      "created_at": "2026-05-12T09:40:18.636Z"
+    },
+    "b29b2401-0e4b-4325-b667-d97baa684d71": {
+      "id": "b29b2401-0e4b-4325-b667-d97baa684d71",
+      "email": "ankityadav18193@gmail.com",
+      "auditId": "1987d8ee-2e4c-44fe-92eb-2f6e31f95171",
+      "audit_id": "1987d8ee-2e4c-44fe-92eb-2f6e31f95171",
+      "created_at": "2026-05-12T09:43:56.177Z"
+    },
+    "f6c5eacb-ada0-4150-8f6f-32375905cc04": {
+      "id": "f6c5eacb-ada0-4150-8f6f-32375905cc04",
+      "email": "ankityadav18193@gmail.com",
+      "company": "",
+      "role": "",
+      "teamSize": 21,
+      "auditId": "8110e0fd-a3ed-4b45-bd01-27e1de7ec314",
+      "audit_id": "8110e0fd-a3ed-4b45-bd01-27e1de7ec314",
+      "created_at": "2026-05-12T09:47:07.664Z"
+    },
+    "a4ae3a6a-482e-4d0d-a8fc-8c7d6539db41": {
+      "id": "a4ae3a6a-482e-4d0d-a8fc-8c7d6539db41",
+      "email": "ankityadav18193@gmail.com",
+      "company": "",
+      "role": "",
+      "teamSize": 44,
+      "auditId": "0e9da71a-881e-432e-831f-563a77f57a77",
+      "audit_id": "0e9da71a-881e-432e-831f-563a77f57a77",
+      "created_at": "2026-05-12T09:57:04.661Z"
+    },
+    "9dc6c276-7fa6-4ccf-96a0-2808c0e2f07b": {
+      "id": "9dc6c276-7fa6-4ccf-96a0-2808c0e2f07b",
+      "email": "ankityadav18193@gmail.com",
+      "company": "",
+      "role": "",
+      "teamSize": 56,
+      "auditId": "c79dc520-a0fb-44f6-a387-f81bb6af3e65",
+      "audit_id": "c79dc520-a0fb-44f6-a387-f81bb6af3e65",
+      "created_at": "2026-05-12T10:03:59.780Z"
+    },
+    "743cd60c-b70d-49db-b011-ebfe86972713": {
+      "id": "743cd60c-b70d-49db-b011-ebfe86972713",
+      "email": "ankityadav18193@gmail.com",
+      "company": "",
+      "role": "",
+      "teamSize": 12,
+      "auditId": "edf44107-3796-40e5-b5b9-18d1ed03c470",
+      "audit_id": "edf44107-3796-40e5-b5b9-18d1ed03c470",
+      "created_at": "2026-05-12T10:10:30.296Z"
+    },
+    "0eba7f3b-6632-44d7-bbb6-54d961730e98": {
+      "id": "0eba7f3b-6632-44d7-bbb6-54d961730e98",
+      "email": "ankityadav18193@gmail.com",
+      "company": "",
+      "role": "",
+      "teamSize": 56,
+      "auditId": "14554d28-9a33-428d-8c0a-e2745e8da439",
+      "audit_id": "14554d28-9a33-428d-8c0a-e2745e8da439",
+      "created_at": "2026-05-12T10:11:20.791Z"
     }
   },
   "subscriptions": {
@@ -1555,6 +2476,11 @@
       "id": "87dc60dd-30c3-40a7-8a12-c9970136b992",
       "email": "service_sub_test@example.com",
       "created_at": "2026-05-10T21:11:58.287Z"
+    },
+    "a261846f-f887-4c7d-aad2-c170e0bfb7ac": {
+      "id": "a261846f-f887-4c7d-aad2-c170e0bfb7ac",
+      "email": "ankityadav18193@gmail.com",
+      "created_at": "2026-05-12T08:54:13.686Z"
     }
   }
 }

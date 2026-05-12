@@ -9,7 +9,12 @@ export interface EmailData {
 
 export async function sendAuditEmail(email: string, auditData: EmailData, reportLink: string) {
   try {
+
+    console.log("EMAIL FUNCTION STARTED");
+
     // Determine transport method
+    logger.logInfo('Initializing SMTP transport', { host: config.email.smtpHost, port: config.email.smtpPort, secure: config.email.smtpSecure });
+
     const transporter = nodemailer.createTransport({
       host: config.email.smtpHost,
       port: config.email.smtpPort,
@@ -20,7 +25,16 @@ export async function sendAuditEmail(email: string, auditData: EmailData, report
       },
     });
 
+    console.log("TRANSPORT CREATED");
+
+    await transporter.verify();
+
+    console.log("SMTP VERIFIED");
+
+    logger.logInfo('Attempting to send audit email', { to: email, from: config.email.from });
+
     const from = config.email.from;
+    console.log("ABOUT TO SEND EMAIL");
 
     await transporter.sendMail({
       from,
@@ -50,8 +64,11 @@ export async function sendAuditEmail(email: string, auditData: EmailData, report
       `,
     });
 
+    console.log("EMAIL SENT SUCCESS");
+
     logger.logInfo('Audit email sent successfully', { email });
   } catch (error: any) {
+    console.error("EMAIL ERROR:", error);
     logger.logError('Failed to send audit email', { email, error: error.message });
     // Silent fail in production
   }

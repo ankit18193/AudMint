@@ -18,22 +18,25 @@ const sanitize = (data: any): any => {
   return sanitized;
 };
 
-const print = (level: LogLevel, message: string, meta?: any) => {
-  const timestamp = new Date().toISOString();
-  const metaString = meta ? ` ${JSON.stringify(sanitize(meta))}` : '';
-  console.log(`[${level}] ${timestamp} - ${message}${metaString}`);
-};
+import fs from 'fs';
+import path from 'path';
+
+const logFile = path.resolve(__dirname, '../../../app.log');
 
 export const logger = {
-  logInfo(message: string, meta?: any) {
-    print('INFO', message, meta);
+  logInfo: (message: string, meta?: any) => {
+    const log = `[INFO] ${new Date().toISOString()} - ${message} ${meta ? JSON.stringify(sanitize(meta)) : ''}\n`;
+    console.log(log);
+    fs.appendFileSync(logFile, log);
   },
-
-  logError(message: string, meta?: any) {
-    print('ERROR', message, meta);
+  logWarn: (message: string, meta?: any) => {
+    const log = `[WARN] ${new Date().toISOString()} - ${message} ${meta ? JSON.stringify(sanitize(meta)) : ''}\n`;
+    console.warn(log);
+    fs.appendFileSync(logFile, log);
   },
-
-  logWarn(message: string, meta?: any) {
-    print('WARN', message, meta);
+  logError: (message: string, meta?: any) => {
+    const log = `[ERROR] ${new Date().toISOString()} - ${message} ${meta ? JSON.stringify(sanitize(meta)) : ''}\n`;
+    console.error(log);
+    fs.appendFileSync(logFile, log);
   }
 };
