@@ -1,47 +1,136 @@
 # Unit Economics: AudMint by Credex
 
-## 1. Converted Lead Value (CLV)
-For Credex, a "converted lead" is a company that completes an audit, identifies significant overspend, and eventually purchases AI infrastructure credits through our platform.
+## 1. Converted Lead Value (LTV)
 
-**The Math:**
-- **Average identified annual waste**: $6,000 (Based on a 50-person team with 15 redundant seats).
-- **Average Credex Transaction Size**: $25,000 (Credit purchase for 12 months).
-- **Credex Margin (Spread)**: 15% (Purchased at 40% discount, sold at 25% discount).
-- **Gross Profit per Conversion**: $3,750 ($25,000 * 0.15).
+For Credex, a “converted lead” represents a company that:
+1. Completes an AI spend audit
+2. Identifies measurable overspend or inefficiency
+3. Purchases AI infrastructure credits or optimization services through Credex
 
-Given that many customers purchase credits for multiple tools (e.g., both Cursor and Claude), the **Estimated Lifetime Value (LTV) of a converted lead is ~$7,500 over 18 months.**
+### Estimated Economics
+- Average identified annual overspend: **$4,000–$8,000**
+- Average infrastructure credit transaction: **$20,000–$30,000**
+- Estimated Credex margin spread: **10–15%**
+- Estimated gross profit per successful transaction: **~$3,000–$4,500**
 
-## 2. Customer Acquisition Cost (CAC)
-Since we are focusing on organic channels for the GTM (X threads, LinkedIn content, Slack communities), our CAC is primarily "Time-Adjusted Cost."
+Because companies frequently expand usage after initial onboarding (additional seats, APIs, or multi-vendor tooling), the estimated long-term value of a converted customer is significantly higher than the initial transaction.
 
-**The Math:**
-- **Content Creation (Engineering + Marketing time)**: $500/post.
-- **Outreach/DMs**: $20/lead.
-- **Average visits per post**: 2,000.
-- **Audit Completion Rate**: 10% (200 audits).
-- **Lead Capture Rate (Email)**: 20% of audits (40 leads).
-- **Blended CAC per Captured Lead**: $500 / 40 = **$12.50 per email address.**
+### Estimated LTV
+**Estimated customer lifetime value (LTV): ~$7,500 over 12–18 months**
 
-## 3. Conversion Funnel Math (Audit → Purchase)
-To be profitable, the funnel must perform as follows:
-1. **Audit Completed**: 1,000 users.
-2. **Consultation Booked (High Savings)**: 5% (50 bookings).
-3. **Credit Purchase (Closed Won)**: 10% of bookings (5 sales).
+This estimate assumes:
+- repeat purchases
+- multi-tool optimization
+- ongoing AI infrastructure usage growth
 
-**Funnel ROI:**
-- **Total Acquisition Cost**: 1,000 audits * $1.25 (blended cost) = $1,250.
-- **Total Revenue (Gross Profit)**: 5 sales * $3,750 = $18,750.
-- **ROI**: **15:1**. 
+---
 
-This high ROI allows us to eventually transition to paid acquisition (LinkedIn Ads) once we verify these organic conversion rates.
+# 2. Customer Acquisition Cost (CAC)
 
-## 4. Path to $1M ARR in 18 Months
-To drive $1M in Annual Recurring Revenue (ARR) through the AudMint tool, we need to close ~$84k in margin per month.
+The initial GTM strategy prioritizes:
+- organic content
+- engineering-led distribution
+- social proof
+- AI/tooling communities
 
-**Requirements:**
-- **Monthly Closed Deals**: 23 deals ($84,000 / $3,750 profit per deal).
-- **Monthly Audits Needed**: 4,600 audits (based on the 0.5% total conversion rate from audit to sale).
-- **Scaling Lever**: We must move beyond "Self-Reported Audits" to "SSO-Verified Audits" (Week 2 Roadmap). Verified audits have a 3x higher consultation booking rate because the data is "undeniable," which would reduce the required monthly audit volume to ~1,500 to hit the same revenue target.
+This keeps paid acquisition costs close to zero during the validation phase.
 
-## 5. Strategic Value Beyond Direct Sales
-AudMint serves as a **"Low-Friction Trojan Horse."** Even if a user doesn't buy credits immediately, they have now benchmarked their spend against Credex's data. We become their "trusted advisor" for AI spend. When they eventually raise their next round and look to scale their AI infrastructure, Credex is the first brand they recall. The "Brand Equity" value of being the "Mint for AI" is difficult to quantify but likely exceeds the direct transaction profit in the long run.
+### Estimated Acquisition Inputs
+- Content creation + research cost: **~$500 per high-quality post/thread**
+- Average reach per post: **1,500–2,500 targeted views**
+- Audit completion rate: **8–12%**
+- Lead capture rate: **15–25% of completed audits**
+
+### Estimated CAC
+Using blended averages:
+
+- ~2,000 visits
+- ~200 completed audits
+- ~40 captured leads
+
+Estimated blended CAC:
+```text
+$500 / 40 = ~$12.50 per captured lead
+```
+
+This is sustainable because the downstream value of even a single converted B2B customer is high.
+
+---
+
+# 3. Conversion Funnel Economics
+
+The expected conversion path:
+
+1. User completes audit
+2. High-savings users are shown consultation CTA
+3. Qualified leads book optimization calls
+4. A subset converts into infrastructure or advisory customers
+
+### Estimated Funnel
+- 1,000 completed audits
+- ~5% consultation bookings → 50 calls
+- ~10% close rate on consultations → 5 customers
+
+### Estimated Profitability
+- Estimated acquisition spend:
+```text
+1,000 audits × $1.25 blended acquisition cost = ~$1,250
+```
+
+- Estimated gross profit:
+```text
+5 customers × ~$3,750 gross profit = ~$18,750
+```
+
+### Estimated ROI
+Approximate blended ROI:
+```text
+~15:1
+```
+
+The purpose of the initial organic phase is not maximum revenue — it is validating whether the audit experience consistently identifies actionable savings that motivate enterprise conversations.
+
+---
+
+# 4. Path Toward Scalable Revenue
+
+To approach meaningful recurring revenue, the system must scale beyond self-reported audit inputs.
+
+### Current Limitation
+The current MVP relies on manually entered usage and spend estimates.
+
+### Planned Evolution
+Future versions would support:
+- SSO-linked audits
+- billing integrations
+- verified usage imports
+- organization-level benchmarking
+
+Verified audits are expected to improve:
+- trust
+- consultation conversion rates
+- recommendation accuracy
+
+Even modest increases in conversion efficiency dramatically reduce the required acquisition volume.
+
+---
+
+# 5. Strategic Value Beyond Direct Revenue
+
+AudMint is valuable even when users do not immediately purchase infrastructure credits.
+
+The product positions Credex as:
+- a trusted optimization advisor
+- a benchmarking layer for AI spend
+- an authority on AI infrastructure efficiency
+
+This creates long-term strategic value because companies typically revisit infrastructure decisions repeatedly as AI adoption expands.
+
+The long-term advantage is not only transactional revenue, but becoming the default platform companies associate with:
+- AI cost visibility
+- optimization recommendations
+- infrastructure purchasing guidance
+
+In that sense, AudMint acts as both:
+1. a lead-generation engine
+2. a market-positioning tool

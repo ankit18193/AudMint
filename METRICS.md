@@ -1,34 +1,274 @@
 # Metrics Strategy: AudMint
 
-## 1. The North Star Metric
-Our North Star Metric is **"Total Identified Annual Savings (TIAS)."** 
+# 1. North Star Metric
 
-Unlike "Daily Active Users" or "Page Views," TIAS directly measures the *value delivered* by the tool. If TIAS is increasing, it means we are reaching the right users (those with waste) and our audit engine is successfully surfacing high-impact optimizations. This metric also serves as a leading indicator for Credex's revenue pipeline; the more waste we identify, the larger the pool of potential credit sales.
+## Total Identified Annual Savings (TIAS)
 
-## 2. Supporting Input Metrics
-To drive our North Star (TIAS), we track three primary input metrics:
+The primary North Star Metric for AudMint is:
 
-1. **Audit Completion Rate (ACR)**: 
-   - *Definition*: (Users who reach the Results Page) / (Users who start Step 1).
-   - *Why it matters*: This measures the friction in our multi-step form. If ACR drops, we need to simplify the "Usage Configuration" step or improve our記憶 retention (Step persistence).
+> Total Identified Annual Savings (TIAS)
 
-2. **Lead Capture Conversion (LCC)**:
-   - *Definition*: (Users who submit the Email Gate) / (Users on the Results Page).
-   - *Why it matters*: This validates our "Value-First" hypothesis. If users see their results but don't want the PDF/Notify-me report, we haven't convinced them of the tool's ongoing utility.
+TIAS measures the total annual cost reductions identified across all completed audits.
 
-3. **Consultation "High-Savings" CTR**:
-   - *Definition*: (Clicks on 'Book Consultation') / (Users with >$500/mo identified savings).
-   - *Why it matters*: This is the ultimate measure of "Lead Quality." It tells us if our recommendations are "urgent" enough to move a busy VPE to a sales conversation.
+Example:
+- Team A saves $4,000/year
+- Team B saves $12,000/year
+- Team C saves $1,500/year
 
-## 3. Instrumentation Roadmap
-For the MVP, we will use **PostHog** for product analytics and **Sentry** for error tracking. 
-- **Phase 1**: Instrument every "Step Complete" event to identify the exact drop-off point in the 3-step audit.
-- **Phase 2**: Implement "Scroll Depth" tracking on the Public Report pages to see if shared users are reading the full breakdown or just the Hero savings number.
-- **Phase 3**: Connect the backend "Lead" events to our CRM (HubSpot) to track the full lifecycle from "First Audit" to "Credit Purchase."
+Combined TIAS:
+```text
+$17,500/year
+```
 
-## 4. The Pivot Trigger
-If our **Lead Capture Conversion (LCC) falls below 5% for three consecutive weeks** despite 1,000+ monthly visits, we will trigger a pivot. A 5% LCC indicates that either:
-- The "Self-Reported" nature of the tool makes users distrust the results.
-- The "Audit" is a one-time novelty rather than a business necessity.
+This metric was intentionally chosen over:
+- page views
+- daily active users
+- generic signups
 
-In this scenario, we would pivot the tool from a "Free Audit" to a "Benchmarking Tool" (e.g., "See how your AI spend compares to 500 other Series B startups"), focusing on the **social comparison** rather than just the direct cost-recovery.
+because AudMint is not a high-frequency consumer product.
+
+The value of the platform comes from:
+- identifying meaningful inefficiencies
+- surfacing actionable optimization opportunities
+- generating financially valuable conversations
+
+If TIAS increases over time, it indicates:
+- the product is reaching the right users
+- recommendations are valuable
+- the audit engine is functioning correctly
+- users are entering realistic spend data
+
+TIAS also acts as an early proxy for:
+- potential consultation demand
+- infrastructure credit opportunities
+- future enterprise revenue potential
+
+---
+
+# 2. Supporting Input Metrics
+
+## A. Audit Completion Rate (ACR)
+
+### Definition
+```text
+Completed audits / Started audits
+```
+
+### Why It Matters
+The audit experience is intentionally short and low-friction.
+
+A declining completion rate usually indicates:
+- confusing form UX
+- too many required inputs
+- unclear pricing terminology
+- mobile usability issues
+
+This metric helps identify where users abandon the audit flow.
+
+### Initial Target
+```text
+> 60% completion rate
+```
+
+---
+
+## B. Lead Capture Conversion (LCC)
+
+### Definition
+```text
+Lead submissions / Completed audits
+```
+
+### Why It Matters
+AudMint follows a:
+> “show value before asking for information”
+
+model.
+
+If users complete audits but refuse to submit contact details, it suggests:
+- insufficient perceived value
+- low trust
+- weak follow-up incentives
+- low urgency around savings
+
+### Initial Target
+```text
+15–25%
+```
+
+---
+
+## C. High-Savings Consultation CTR
+
+### Definition
+```text
+Consultation CTA clicks / Users with >$500 monthly savings
+```
+
+### Why It Matters
+This metric measures:
+- recommendation urgency
+- perceived credibility
+- commercial intent
+
+It is the strongest indicator of whether the audit is creating actionable business pressure rather than curiosity-driven engagement.
+
+### Initial Target
+```text
+5–10%
+```
+
+---
+
+# 3. Product Instrumentation Strategy
+
+## Analytics Stack
+- PostHog → product analytics
+- Sentry → frontend/backend error tracking
+
+These tools were selected because they are:
+- developer-friendly
+- lightweight
+- startup-accessible
+- fast to integrate
+
+---
+
+## Phase 1 — Funnel Visibility
+
+Track:
+- audit started
+- step completion
+- audit completed
+- lead submitted
+- consultation CTA clicked
+
+Goal:
+Identify the exact friction points in the audit experience.
+
+---
+
+## Phase 2 — Report Engagement
+
+Track:
+- scroll depth
+- report sharing
+- time spent on results page
+- benchmark interactions
+- CTA visibility exposure
+
+Goal:
+Understand whether users engage deeply with recommendations or only skim headline savings.
+
+---
+
+## Phase 3 — Revenue Attribution
+
+Connect:
+- completed audits
+- captured leads
+- booked consultations
+- closed infrastructure deals
+
+Goal:
+Measure the relationship between identified savings and downstream commercial outcomes.
+
+This helps determine:
+- which recommendation types convert best
+- which user segments produce the highest-value opportunities
+- whether benchmark-driven recommendations outperform direct cost-saving recommendations
+
+---
+
+# 4. Pivot Trigger
+
+AudMint is fundamentally a trust product.
+
+If users do not believe the recommendations are credible, the entire funnel weakens.
+
+## Pivot Threshold
+
+A pivot discussion would be triggered if:
+```text
+Lead Capture Conversion < 5%
+for 3 consecutive weeks
+with meaningful traffic volume
+```
+
+This would indicate:
+- users do not perceive ongoing value
+- recommendations feel generic
+- the audit lacks trustworthiness
+- the product behaves more like a novelty calculator than operational tooling
+
+---
+
+# 5. Likely Pivot Direction
+
+The most likely pivot would shift AudMint from:
+> “AI spend audit tool”
+
+to:
+> “AI spend benchmarking platform”
+
+Instead of focusing only on:
+- direct savings
+
+the product would emphasize:
+- peer comparisons
+- industry averages
+- spend-per-engineer benchmarks
+- tooling adoption trends
+
+Example positioning:
+> “Companies your size spend 31% less on AI infrastructure.”
+
+Benchmark-driven products naturally create:
+- stronger retention
+- repeat visits
+- shareability
+- competitive curiosity
+
+which may produce stronger long-term engagement than one-time audits alone.
+
+---
+
+# 6. Long-Term Metrics Evolution
+
+As the platform matures, additional metrics would become important:
+
+## Operational Metrics
+- recommendation accuracy rate
+- false-positive recommendation rate
+- audit generation latency
+- API failure rate
+
+---
+
+## Business Metrics
+- consultation-to-close conversion
+- average identified savings per audit
+- repeat organization usage
+- infrastructure credit conversion rate
+
+---
+
+## Product Metrics
+- report share rate
+- benchmark interaction rate
+- return visitor rate
+- team-level adoption
+
+---
+
+# 7. Guiding Principle
+
+The core philosophy behind the metrics strategy is:
+
+> AudMint should optimize for delivered financial insight, not raw engagement volume.
+
+A smaller number of highly valuable audits is strategically more important than large amounts of low-intent traffic.
+
+The goal is not maximizing clicks.
+
+The goal is becoming the trusted operational layer for AI infrastructure spending decisions.

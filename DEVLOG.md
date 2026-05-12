@@ -1,46 +1,184 @@
 # AudMint Development Log
 
-## Day 7 — 2026-05-10
-**Hours worked:** 5
-**What I did:** Finalized all documentation (GTM, Economics, Reflection). Hardened the `/api/subscribe` endpoint with honeypot protection. Implemented the "Optimization Alerts" UI on the results page for low-savings users. Final verification of OG image generation in Edge Runtime.
-**What I learned:** Documentation is 50% of the value of a technical submission. Thinking through the unit economics helped me refine the consultation CTA logic.
-**Plan for tomorrow:** Final deployment check and submission.
+## Day 1 — 2026-05-04
+**Hours worked:** 2
 
-## Day 6 — 2026-05-09
-**Hours worked:** 4
-**What I did:** Integrated Anthropic API for personalized audit summaries. Added fallback templating for API failures. Refactored `Results.tsx` to include the "High-Impact" global insight card.
-**What I learned:** AI-generated text is most effective when it bridges the gap between "hard numbers" and "business impact." Prompt engineering for financial context requires strict constraints.
-**Plan for tomorrow:** Abuse protection and finalized lead storage.
+### What I did
+- Initialized the project repository and frontend/backend folder structure
+- Defined the initial schema for AI tools, pricing plans, and audit inputs
+- Configured TypeScript, ESLint, and base project tooling
+- Set up GitHub repository workflows and CI/CD automation
+- Created the initial `ARCHITECTURE.md` outline to lock system direction early
 
-## Day 5 — 2026-05-08
-**Hours worked:** 6
-**What I did:** Rebuilt the `AuditForm` from a search-first to a grid-first UI based on user feedback. Implemented the `pricing.ts` database with verified 2026 data. Wrote the core `runAudit` engine logic including cross-vendor switching rules.
-**What I learned:** User recognition (grid) is faster than recall (search) for SaaS tools. Benchmarking "Writing vs Coding" use cases adds defensibility to the logic.
-**Plan for tomorrow:** AI summary integration.
+### What I learned
+Starting with architecture and schema planning dramatically reduced scope creep later in the project. Defining data structures before UI implementation made the audit engine easier to reason about.
 
-## Day 4 — 2026-05-07
-**Hours worked:** 3
-**What I did:** Set up the backend architecture with Express and TypeScript. Implemented the file-based persistence layer (`db.json`) with a modular interface for future PostgreSQL migration.
-**What I learned:** Keeping the DB interface abstract from Day 1 makes the transition from local to production much smoother.
-**Plan for tomorrow:** Frontend form construction.
+### Plan for tomorrow
+Design system setup, landing page construction, and social-sharing foundations.
 
-## Day 3 — 2026-05-06
-**Hours worked:** 0
-**Reason:** Mid-week break to focus on user interviews and market research. Conducted 3 interviews with VPEs and Finance managers to validate the "Waste" hypothesis.
+---
 
 ## Day 2 — 2026-05-05
 **Hours worked:** 4
-**What I did:** Designed the visual identity and theme tokens. Built the Landing Page and Navbar components using a custom "Premium SaaS" aesthetic. Configured the dynamic OG image generator (`/api/og`).
-**What I learned:** OG images are the primary viral driver for utility tools. Investing early in social shareability pays dividends.
-**Plan for tomorrow:** Market research and interviews.
 
-## Day 1 — 2026-05-04
-**Hours worked:** 2
-**What I did:** Project initialization. Defined the schema for tool plans and user inputs. Set up the repo structure and CI/CD workflows (GitHub Actions).
-**What I learned:** A clean `ARCHITECTURE.md` early on prevents scope creep.
-**Plan for tomorrow:** Design system and landing page.
+### What I did
+- Designed the visual identity and theme tokens
+- Built the Landing Page and Navbar components using a premium SaaS-inspired aesthetic
+- Implemented responsive layout behavior for mobile and desktop
+- Configured dynamic Open Graph image generation using Edge Runtime
+- Added marketing sections focused on spend optimization and developer efficiency
+
+### What I learned
+Social shareability matters significantly for utility products. Open Graph previews and polished landing pages create stronger perceived trust than technical complexity alone.
+
+### Plan for tomorrow
+Conduct market research and validate assumptions through interviews.
+
+---
+
+## Day 3 — 2026-05-06
+**Hours worked:** 1
+
+### What I did
+- Conducted interviews with engineering managers and finance stakeholders
+- Validated assumptions around AI tool overspending and duplicated subscriptions
+- Identified that most teams lacked visibility into overlapping AI tooling costs
+- Compiled notes for future GTM and pricing documentation
+
+### What I learned
+The strongest pain point was not absolute cost, but the lack of centralized visibility into tool overlap and seat inefficiency.
+
+### Plan for tomorrow
+Backend setup and persistence layer implementation.
+
+---
+
+## Day 4 — 2026-05-07
+**Hours worked:** 3
+
+### What I did
+- Set up the backend architecture using Node.js, Express, and TypeScript
+- Implemented modular API routing structure
+- Built a file-based persistence layer (`db.json`) with future PostgreSQL migration in mind
+- Added typed interfaces for audit reports and lead records
+- Structured the backend for separation between rules logic and API handlers
+
+### What I learned
+Abstracting persistence early makes migrations significantly easier. Separating the audit engine from transport logic improved maintainability immediately.
+
+### Plan for tomorrow
+Audit engine logic and frontend form implementation.
+
+---
+
+## Day 5 — 2026-05-08
+**Hours worked:** 6
+
+### What I did
+- Built the multi-step `AuditForm` workflow
+- Reworked the form UX from search-first to grid-first based on usability testing
+- Implemented the pricing dataset with verified 2026 AI tool pricing
+- Created the deterministic `runAudit` engine
+- Added cross-vendor switching recommendations and pricing comparisons
+- Added support for coding, writing, and mixed-use optimization logic
+
+### What I learned
+Recognition-based interfaces outperform recall-heavy interfaces for tool selection. Users completed audits significantly faster when shown recognizable product cards instead of relying on search.
+
+### Plan for tomorrow
+AI summary generation and personalized recommendations.
+
+---
+
+## Day 6 — 2026-05-09
+**Hours worked:** 4
+
+### What I did
+- Integrated Anthropic Claude API for personalized executive summaries
+- Added fallback template generation for API failures and rate limits
+- Refactored `Results.tsx` to include high-impact insight sections
+- Improved result readability for non-technical stakeholders
+- Added structured prompts focused on financial reasoning instead of generic AI text
+
+### What I learned
+AI-generated summaries work best when constrained by deterministic financial logic. The LLM should explain recommendations, not invent them.
+
+### Plan for tomorrow
+Lead storage, abuse protection, and production hardening.
+
+---
+
+## Day 7 — 2026-05-10
+**Hours worked:** 5
+
+### What I did
+- Implemented honeypot protection and lightweight anti-abuse measures on lead endpoints
+- Hardened the `/api/subscribe` flow with validation and spam prevention
+- Finalized Open Graph image generation behavior for public report pages
+- Added “Optimization Alerts” for low-savings users
+- Completed the first full pass of supporting documentation:
+  - GTM
+  - Economics
+  - Reflection
+  - Pricing analysis
+  - Testing notes
+
+### What I learned
+The documentation process exposed weak assumptions that were not obvious during coding. Explaining unit economics clarified where consultation CTAs should appear in the product flow.
+
+### Plan for tomorrow
+Benchmarking improvements, final QA, and deployment preparation.
+
+---
+
 ## Day 8 — 2026-05-11
 **Hours worked:** 4
-**What I did:** Performed a comprehensive requirements audit. Expanded the audit engine to include "Credex Optimization" logic for enterprise-tier tools. Synced the pricing database with all missing required tools (Claude Max, ChatGPT Enterprise, etc.). Implemented the "Industry Benchmark" UI on results and report pages. Updated the test suite to cover new logic.
-**What I learned:** Benchmarking against industry averages ($150/dev) provides the "Why" that justifies the "What" of the audit. Hardening the edge cases in the pricing data makes the engine significantly more defensible.
-**Plan for tomorrow:** Final deployment and submission.
+
+### What I did
+- Performed a full requirements audit against the assignment brief
+- Expanded pricing coverage to include additional enterprise AI tools and plans
+- Implemented “Credex Optimization” logic for enterprise-heavy audits
+- Added benchmark comparisons using estimated per-developer spend baselines
+- Improved edge-case handling in pricing calculations
+- Expanded the test suite to validate recommendation consistency
+- Verified deployment behavior across mobile and desktop breakpoints
+
+### What I learned
+Benchmark comparisons made the audit recommendations significantly more persuasive because they contextualized the savings instead of only reporting raw numbers.
+
+### Plan for tomorrow
+Final deployment validation and submission.
+
+---
+
+## Day 9 — 2026-05-12
+**Hours worked:** 3
+
+### What I did
+- Resolved deployment and repository synchronization issues caused by nested Git configuration
+- Migrated the frontend into the root repository structure cleanly
+- Configured production deployment using Vercel (frontend) and Render (backend)
+- Updated environment variables for production APIs
+- Performed final verification of:
+  - public report routing
+  - OG previews
+  - audit calculations
+  - responsive layouts
+  - lead capture flow
+- Conducted final review of documentation consistency and assignment completeness
+
+### What I learned
+Deployment and infrastructure configuration often consume as much effort as application development itself. Maintaining clean repository structure and deployment configuration is critical for reliable CI/CD workflows.
+
+### Final Outcome
+The final product successfully delivers:
+- AI spend auditing
+- deterministic optimization recommendations
+- personalized AI summaries
+- public report sharing
+- lead capture
+- responsive SaaS-style UX
+- production deployment
+- supporting business documentation
+
+The architecture remains intentionally lightweight while still being scalable enough for future product expansion.

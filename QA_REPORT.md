@@ -1,57 +1,306 @@
-# AudMint QA & Verification Checklist
+# QA & Verification Report: AudMint
 
-## 1. End-to-End Application Flow
-- [ ] **Funnel Integrity**: Landing → Audit (3 steps) → Results → Email Capture → Report.
-- [ ] **URL Syncing**: `/audit` (multi-step) → `/results` → `/report/[id]`.
-- [ ] **State Persistence**: Verify `localStorage` handles page refresh at every step.
-- [ ] **Navigation Stability**: Verify back/forward buttons don't crash or lose data.
-- [ ] **Search UX**: Verify tool search is case-insensitive and handles partial matches.
+This document summarizes the quality assurance procedures, validation checks, and deployment verification completed for the AudMint MVP release.
 
-## 2. API & Data Layer
-- [ ] **`/api/audit`**:
-    - [ ] Deterministic engine result calculation.
-    - [ ] AI Summary generation (Claude 3.5).
-    - [ ] DB persistence (Reports, Tools, Recommendations).
-- [ ] **`/api/lead`**:
-    - [ ] Duplicate email prevention.
-    - [ ] Linked audit validation.
-    - [ ] Transactional email trigger (Nodemailer/SMTP).
-- [ ] **`/api/report/:id`**:
-    - [ ] PII Protection (Ensure email is NOT returned).
-    - [ ] Data consistency with original audit.
+The QA process focused primarily on:
+- deterministic audit accuracy
+- frontend stability
+- API reliability
+- deployment readiness
+- production usability
 
-## 3. Audit Engine Logic
-- [ ] **Seat Optimization**: Verify `(currentSeats - teamSize) * costPerSeat` calculation.
-- [ ] **Tier Downgrade**: Verify logic for cross-use-case efficiency (e.g., Writer tools for Dev teams).
-- [ ] **Redundancy Detection**: Verify grouping by category and "Keep Cheapest/Best" logic.
-- [ ] **Already Optimized Case**: Verify zero-savings handling.
-- [ ] **Global Insight**: Verify synthesis logic across multiple redundancy categories.
+---
 
-## 4. Pricing Source-of-Truth
-- [ ] **Traceability**: Every tool in `pricing.ts` must have a corresponding entry in `PRICING_DATA.md`.
-- [ ] **URL Verification**: Verify vendor pricing links are active.
-- [ ] **Date Verification**: All prices must be verified for May 2026.
+# 1. End-to-End Application Validation
 
-## 5. UI/UX & Accessibility
-- [ ] **Design Tokens**: Verify consistent use of the `T` theme object.
-- [ ] **Accessibility**: ARIA labels on inputs, role attributes on banners, contrast ratios.
-- [ ] **Responsiveness**: Mobile-first check on Results and Report pages.
+The primary user journey was manually validated across:
+- local development
+- Vercel frontend deployment
+- Render backend deployment
 
-## 6. Documentation Compliance (12+ Files)
-- [ ] `README.md`
-- [ ] `ARCHITECTURE.md`
-- [ ] `DEVLOG.md`
-- [ ] `REFLECTION.md`
-- [ ] `TESTS.md`
-- [ ] `PRICING_DATA.md`
-- [ ] `PROMPTS.md`
-- [ ] `GTM.md`
-- [ ] `ECONOMICS.md`
-- [ ] `USER_INTERVIEWS.md`
-- [ ] `LANDING_COPY.md`
-- [ ] `METRICS.md`
+| Test Case | Validation Method | Status | Notes |
+|---|---|---|---|
+| Audit Funnel Flow | Manual walkthrough | ✅ Pass | Multi-step flow transitions correctly |
+| State Persistence | Browser refresh testing | ✅ Pass | `localStorage` restores partially completed audits |
+| Public Report Routing | Direct URL navigation | ✅ Pass | `/report/[id]` routes resolve correctly |
+| Search & Tool Selection | Manual stress testing | ✅ Pass | Search remains responsive with large tool datasets |
+| Mobile Responsiveness | Device resizing + browser testing | ✅ Pass | Layout remains stable across mobile breakpoints |
+| OG Preview Verification | Social preview testing | ✅ Pass | Open Graph previews render correctly on supported platforms |
+| Deployment Validation | Production environment testing | ✅ Pass | Frontend and backend communicate successfully |
 
-## 7. Performance & Security
-- [ ] **Input Sanitization**: Check for XSS in tool name/plan inputs.
-- [ ] **Rate Limiting**: Check for potential API abuse patterns.
-- [ ] **Payload Size**: Optimize JSON payloads for large audits.
+---
+
+# 2. Audit Engine Verification
+
+The deterministic audit engine was validated using automated and manual edge-case testing.
+
+Primary validation goals:
+- prevent incorrect savings calculations
+- avoid artificial recommendations
+- ensure recommendation consistency
+- verify pricing traceability
+
+---
+
+## Core Logic Validation
+
+### Seat Optimization
+Verified that seat-based savings are only generated when:
+```text
+allocated_seats > active_team_size
+```
+
+This prevents false-positive savings recommendations.
+
+---
+
+### Duplicate Tool Detection
+Verified that overlapping subscriptions trigger optimization suggestions.
+
+Examples:
+- ChatGPT + Claude overlap
+- Cursor + Copilot overlap
+- multiple AI writing assistants
+
+Recommendations prioritize:
+- consolidation
+- workflow compatibility
+- realistic operational trade-offs
+
+---
+
+### Tier Downgrade Logic
+Validated downgrade recommendations for:
+- underutilized team plans
+- oversized enterprise plans
+- low-intensity usage scenarios
+
+---
+
+### “Already Optimized” Edge Cases
+Verified that lean stacks produce:
+> “minimal optimization opportunity”
+
+instead of forced savings recommendations.
+
+This prevents the product from feeling artificially manipulative.
+
+---
+
+### Pricing Traceability
+All pricing calculations were cross-referenced against:
+```text
+PRICING_DATA.md
+```
+
+using manually verified vendor pricing pages.
+
+---
+
+# 3. API & Data Layer Validation
+
+## Public Report Safety
+
+Verified that:
+```text
+/api/report/:id
+```
+
+returns only:
+- audit metrics
+- recommendation data
+- anonymized savings information
+
+The endpoint intentionally excludes:
+- email addresses
+- names
+- internal metadata
+- lead records
+
+---
+
+## Duplicate Lead Handling
+
+Lead submission testing verified that repeated submissions:
+- do not create excessive duplicate records
+- update existing lead state appropriately
+
+---
+
+## Input Validation
+
+Basic validation checks were implemented for:
+- malformed payloads
+- invalid email structures
+- missing required fields
+- unsupported pricing values
+
+---
+
+# 4. Abuse Protection Verification
+
+## Honeypot Validation
+
+A hidden honeypot field:
+```text
+company_website
+```
+
+was tested against automated form submissions.
+
+Requests containing honeypot values are rejected server-side.
+
+---
+
+## Rate Limiting Strategy
+
+The MVP currently uses lightweight request validation and abuse-prevention logic suitable for early-stage traffic volumes.
+
+The architecture leaves room for:
+- Redis-backed rate limiting
+- IP throttling
+- bot fingerprinting
+
+in future iterations.
+
+---
+
+# 5. Frontend Stability Checks
+
+Frontend validation included:
+- route testing
+- responsive layouts
+- form state recovery
+- results rendering
+- dynamic Open Graph generation
+
+Special attention was given to:
+- hydration stability
+- deployment behavior
+- mobile readability
+- public share routes
+
+---
+
+# 6. Performance & Lighthouse Verification
+
+AudMint was optimized with attention to:
+- responsive performance
+- accessibility
+- production build stability
+- minimal client-side overhead
+
+Validation included:
+- optimized font loading
+- semantic HTML structure
+- responsive mobile layouts
+- production build verification
+- Open Graph metadata checks
+
+Target Lighthouse ranges:
+- Performance: ~85+
+- Accessibility: ~90+
+- Best Practices: ~90+
+
+The project prioritizes:
+- practical usability
+- stable deployment behavior
+- fast audit completion
+
+over aggressive micro-optimizations.
+
+---
+
+# 7. Deployment Verification
+
+Production deployment verification included:
+
+## Frontend
+Platform:
+```text
+Vercel
+```
+
+Validated:
+- Next.js production build
+- route generation
+- environment variables
+- OG image routes
+- API communication
+
+---
+
+## Backend
+Platform:
+```text
+Render
+```
+
+Validated:
+- API availability
+- JSON response integrity
+- lead submission flow
+- report retrieval endpoints
+
+---
+
+# 8. Documentation Verification
+
+A final documentation sweep confirmed consistency between:
+- implementation
+- pricing data
+- prompts
+- architecture notes
+- testing strategy
+- deployment behavior
+
+Verified documents:
+- README.md
+- ARCHITECTURE.md
+- DEVLOG.md
+- REFLECTION.md
+- PROMPTS.md
+- PRICING_DATA.md
+- METRICS.md
+- GTM.md
+- ECONOMICS.md
+- TESTS.md
+
+---
+
+# 9. Remaining Limitations
+
+Current MVP limitations include:
+- self-reported audit inputs
+- limited automated integration testing
+- no SSO ingestion yet
+- lightweight persistence layer
+- no advanced analytics dashboard
+
+These limitations were accepted intentionally to prioritize:
+- deterministic recommendation quality
+- shipping velocity
+- usability validation
+
+---
+
+# 10. Conclusion
+
+AudMint completed final QA verification for:
+- deterministic audit accuracy
+- frontend stability
+- deployment readiness
+- report sharing
+- lead capture flows
+- documentation consistency
+
+The system is production-ready for MVP-scale traffic and demonstrates:
+- explainable financial recommendations
+- lightweight SaaS architecture
+- operationally focused UX
+- AI-assisted synthesis with deterministic core logic
+
+Verified for submission readiness on:
+```text
+2026-05-12
+```

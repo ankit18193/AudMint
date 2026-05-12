@@ -27,8 +27,8 @@ AudMint is a lead-generation and decision-engine SaaS product for startups and e
    - `npm run dev`
 
 ## Deployment Link
-Frontend: https://audmint-frontend.vercel.app (Pending deployment)
-Backend: https://audmint-api.onrender.com (Pending deployment)
+Frontend: https://aud-mint.vercel.app
+Backend: https://audmint-api.onrender.com (Please update this if your Render URL is different)
 
 ## Key Features
 - **Multi-Step Audit Flow**: Intuitive tool selection and usage configuration.
