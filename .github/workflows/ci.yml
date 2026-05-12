@@ -17,7 +17,7 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: '20'
-        cache: 'npm'
+        
 
     - name: Install Backend Dependencies
       run: |
@@ -44,5 +44,5 @@ jobs:
         cd frontend
         npm run build
       env:
-        NEXT_PUBLIC_API_URL: https://api.audmint.com
-        NEXT_PUBLIC_APP_URL: https://audmint.com
+        NEXT_PUBLIC_API_URL: https://audmint.onrender.com
+        NEXT_PUBLIC_APP_URL: https://aud-mint.vercel.app
